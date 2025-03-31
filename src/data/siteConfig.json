@@ -1,0 +1,51 @@
+{
+  "businessInfo": {
+    "name": "Novelli Pressure Washing",
+    "address": "Charlotte, NC",
+    "phone": "980-266-4818",
+    "email": "novellipw@gmail.com",
+    "hours": "Monday-Friday: 8am-6pm, Saturday: 9am-4pm, Sunday: Closed",
+    "serviceAreas": [
+      "Charlotte",
+      "Matthews",
+      "Huntersville",
+      "Concord",
+      "Gastonia",
+      "Mint Hill",
+      "Indian Trail",
+      "Pineville"
+    ]
+  },
+  "socialMedia": {
+    "facebook": "https://facebook.com/novellipressurewashing",
+    "instagram": "https://instagram.com/novellipressurewashing",
+    "google": "https://g.page/novellipressurewashing"
+  },
+  "colors": {
+    "primary": "#003057",
+    "secondary": "#00B0F0",
+    "accent": "#FFA500",
+    "dark": "#002040",
+    "light": "#f8f9fa",
+    "success": "#28a745",
+    "warning": "#ffc107",
+    "danger": "#dc3545",
+    "info": "#17a2b8"
+  },
+  "seo": {
+    "title": "Novelli Pressure Washing | Professional Cleaning Services in Charlotte, NC",
+    "description": "Novelli Pressure Washing provides professional residential and commercial pressure washing services in Charlotte, NC and surrounding areas. Call us today for a free quote!",
+    "keywords": [
+      "pressure washing",
+      "power washing",
+      "Charlotte",
+      "NC",
+      "residential",
+      "commercial",
+      "soft washing",
+      "gutter cleaning"
+    ],
+    "ogImage": "/images/og-image.jpg",
+    "twitterHandle": "@novelliPW"
+  }
+}

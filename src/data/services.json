@@ -1,0 +1,105 @@
+[
+  {
+    "id": "residential-pressure-washing",
+    "title": "Residential Pressure Washing",
+    "shortDescription": "Professional cleaning for homes and residential properties",
+    "fullDescription": "Our residential pressure washing services are designed to restore the beauty of your home's exterior surfaces. We use state-of-the-art equipment and eco-friendly cleaning solutions to remove dirt, grime, mold, mildew, and other contaminants from your property.",
+    "features": [
+      "Driveway cleaning",
+      "Sidewalk and walkway cleaning",
+      "Deck and patio washing",
+      "Fence cleaning",
+      "House washing",
+      "Roof cleaning"
+    ],
+    "image": "https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=800&h=600&auto=format&fit=crop",
+    "beforeAfterImages": [
+      {
+        "before": "https://images.unsplash.com/photo-1520970519539-8c9eaad9d6ed?q=80&w=400&h=300&auto=format&fit=crop",
+        "after": "https://images.unsplash.com/photo-1520970519539-8c9eaad9d6ed?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Driveway transformation"
+      },
+      {
+        "before": "https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?q=80&w=400&h=300&auto=format&fit=crop",
+        "after": "https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Deck restoration"
+      }
+    ]
+  },
+  {
+    "id": "commercial-pressure-washing",
+    "title": "Commercial Pressure Washing",
+    "shortDescription": "Professional cleaning solutions for businesses and commercial properties",
+    "fullDescription": "Our commercial pressure washing services help businesses maintain a clean, professional appearance. We understand the importance of first impressions and work efficiently to minimize disruption to your operations while delivering exceptional results.",
+    "features": [
+      "Storefront cleaning",
+      "Parking lot and garage cleaning",
+      "Dumpster pad cleaning",
+      "Graffiti removal",
+      "Building exterior washing",
+      "Awning cleaning"
+    ],
+    "image": "https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=800&h=600&auto=format&fit=crop",
+    "beforeAfterImages": [
+      {
+        "before": "https://images.unsplash.com/photo-1623298317883-6b70254edf31?q=80&w=400&h=300&auto=format&fit=crop",
+        "after": "https://images.unsplash.com/photo-1623298317883-6b70254edf31?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Storefront cleaning"
+      },
+      {
+        "before": "https://images.unsplash.com/photo-1578594640334-b71e6c1cbf7d?q=80&w=400&h=300&auto=format&fit=crop",
+        "after": "https://images.unsplash.com/photo-1578594640334-b71e6c1cbf7d?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Parking lot cleaning"
+      }
+    ]
+  },
+  {
+    "id": "soft-washing",
+    "title": "Soft Washing",
+    "shortDescription": "Gentle cleaning for delicate surfaces",
+    "fullDescription": "Soft washing is a low-pressure cleaning method that uses specialized solutions to safely remove dirt, algae, mold, and mildew from delicate surfaces. This technique is perfect for surfaces that could be damaged by high-pressure washing.",
+    "features": [
+      "Roof cleaning",
+      "Vinyl siding cleaning",
+      "Stucco surface cleaning",
+      "Cedar shake cleaning",
+      "Painted surfaces",
+      "Screened enclosures"
+    ],
+    "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&h=600&auto=format&fit=crop",
+    "beforeAfterImages": [
+      {
+        "before": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop",
+        "after": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Roof cleaning"
+      },
+      {
+        "before": "https://images.unsplash.com/photo-1613545325278-9265e1609167?q=80&w=400&h=300&auto=format&fit=crop",
+        "after": "https://images.unsplash.com/photo-1613545325278-9265e1609167?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Siding cleaning"
+      }
+    ]
+  },
+  {
+    "id": "gutter-cleaning",
+    "title": "Gutter Cleaning",
+    "shortDescription": "Professional gutter cleaning and maintenance",
+    "fullDescription": "Our gutter cleaning service removes leaves, debris, and blockages to ensure proper water flow and prevent damage to your home. Clogged gutters can lead to water damage, foundation issues, and landscape erosion.",
+    "features": [
+      "Gutter debris removal",
+      "Downspout cleaning",
+      "Gutter flushing",
+      "Minor repairs",
+      "Gutter guard installation",
+      "Preventative maintenance"
+    ],
+    "image": "https://images.unsplash.com/photo-1635424710928-0544e8512eae?q=80&w=800&h=600&auto=format&fit=crop",
+    "beforeAfterImages": [
+      {
+        "before": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop",
+        "after": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Gutter cleaning"
+      }
+    ]
+  }
+]

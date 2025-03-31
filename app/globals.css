@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #003057;
+  --secondary: #00B0F0;
+  --accent: #FFA500;
+  --dark: #002040;
+  --light: #f8f9fa;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-open-sans);
+  --font-heading: var(--font-montserrat);
+}
+
+/* Removed dark mode to keep consistent white background */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-base font-medium rounded-md transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-secondary;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

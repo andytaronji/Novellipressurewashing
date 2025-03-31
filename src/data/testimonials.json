@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "location": "Charlotte, NC",
+    "rating": 5,
+    "text": "Novelli Pressure Washing did an amazing job on our driveway and patio. They were professional, on time, and the results exceeded our expectations. Our concrete looks brand new!",
+    "service": "residential-pressure-washing",
+    "date": "2024-02-15"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Johnson",
+    "location": "Matthews, NC",
+    "rating": 5,
+    "text": "I hired Novelli to clean the exterior of my office building and they did a fantastic job. The building looks fresh and clean, and they worked around our business hours to minimize disruption. Highly recommend!",
+    "service": "commercial-pressure-washing",
+    "date": "2024-01-20"
+  },
+  {
+    "id": 3,
+    "name": "Michael Rodriguez",
+    "location": "Huntersville, NC",
+    "rating": 5,
+    "text": "The soft washing service for our roof was excellent. The team was knowledgeable and careful, and they completely removed all the black streaks and algae. Our roof looks like new again!",
+    "service": "soft-washing",
+    "date": "2023-12-05"
+  },
+  {
+    "id": 4,
+    "name": "Emily Wilson",
+    "location": "Concord, NC",
+    "rating": 4,
+    "text": "Great service from Novelli Pressure Washing. They cleaned our gutters thoroughly and even fixed a minor issue at no extra charge. Will definitely use them again next season.",
+    "service": "gutter-cleaning",
+    "date": "2023-11-12"
+  },
+  {
+    "id": 5,
+    "name": "David Thompson",
+    "location": "Charlotte, NC",
+    "rating": 5,
+    "text": "I'm extremely satisfied with the work Novelli did on our home. They pressure washed our siding, driveway, and deck, and everything looks incredible. The attention to detail was impressive.",
+    "service": "residential-pressure-washing",
+    "date": "2023-10-30"
+  },
+  {
+    "id": 6,
+    "name": "Jennifer Martinez",
+    "location": "Gastonia, NC",
+    "rating": 5,
+    "text": "Novelli Pressure Washing transformed our restaurant's exterior and patio area. Their commercial cleaning service was thorough and efficient. Our customers have been commenting on how clean everything looks!",
+    "service": "commercial-pressure-washing",
+    "date": "2023-09-18"
+  }
+]

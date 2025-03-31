@@ -1,0 +1,1 @@
+This is a placeholder for the map image. In a real implementation, you would need to create or obtain a proper map image file showing the service area.

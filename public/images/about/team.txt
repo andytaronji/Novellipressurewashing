@@ -1,0 +1,1 @@
+This is a placeholder for the team image. In a real implementation, you would need to create or obtain a proper team image file showing the company's staff.
