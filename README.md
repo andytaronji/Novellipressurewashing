@@ -8,7 +8,7 @@ A modern, responsive website for Novelli Pressure Washing built with Next.js and
 - SEO optimized
 - Fast loading times
 - Interactive components
-- Contact form with validation
+- Contact form with email functionality
 - Testimonials carousel
 - Service showcase
 - Before/After image comparisons
@@ -74,6 +74,12 @@ yarn build
 - Update the content in the `src/data/` directory to change the website content
 - Modify the color scheme in `app/globals.css` and `tailwind.config.js`
 - Replace placeholder images in the `public/images/` directory with real images
+
+## Email Functionality
+
+The contact forms are configured to send emails to novellipw@gmail.com using SendGrid.
+
+For detailed setup instructions, see [EMAIL_SETUP.md](./EMAIL_SETUP.md).
 
 ## License
 

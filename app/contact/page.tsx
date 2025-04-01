@@ -41,9 +41,20 @@ export default function ContactPage() {
     setSubmitError('');
     
     try {
-      // In a real implementation, you would send the form data to your backend
-      // For now, we'll simulate a successful submission after a delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send form data to our API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit form');
+      }
       
       setSubmitSuccess(true);
       setFormData({
@@ -54,7 +65,8 @@ export default function ContactPage() {
         message: ''
       });
     } catch (error) {
-      setSubmitError('There was an error submitting your form. Please try again.');
+      console.error('Error submitting form:', error);
+      setSubmitError(error instanceof Error ? error.message : 'There was an error submitting your form. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
