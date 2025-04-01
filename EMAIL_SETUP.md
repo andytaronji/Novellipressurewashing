@@ -69,12 +69,34 @@ Before going live, it's recommended to test the email functionality:
 
 ## Troubleshooting
 
-If emails are not being sent:
+If you're seeing a 500 error when submitting the form, here are some steps to troubleshoot:
 
-1. Check that your SendGrid API key is correct
-2. Verify that your sender email is properly authenticated in SendGrid
-3. Check the server logs for any error messages
-4. Make sure your SendGrid account is in good standing (not suspended)
+1. **Check Environment Variables**:
+   - Verify that all required environment variables are set correctly:
+     - `SENDGRID_API_KEY`: Your SendGrid API key
+     - `FROM_EMAIL`: A verified email address in SendGrid
+     - `TO_EMAIL`: The recipient email (defaults to novellipw@gmail.com if not set)
+   - Make sure there are no typos or extra spaces in the variable names or values
+   - Confirm that the environment variables are properly set in your hosting platform
+
+2. **Verify SendGrid Configuration**:
+   - Ensure your SendGrid API key is valid and has "Mail Send" permissions
+   - Check that your sender email (`FROM_EMAIL`) is fully verified in SendGrid
+   - Verify that your SendGrid account is active and in good standing
+   - Check if you've exceeded your SendGrid sending limits
+
+3. **Check Server Logs**:
+   - Review your hosting platform's logs for detailed error messages
+   - The API route now includes additional logging that can help identify the issue
+
+4. **Common SendGrid Errors**:
+   - **403 Forbidden**: Usually means your API key doesn't have the right permissions
+   - **401 Unauthorized**: API key is invalid or revoked
+   - **400 Bad Request**: Often related to sender email not being verified
+   - **429 Too Many Requests**: You've exceeded your rate limits
+
+5. **Test with a Different Email Service**:
+   - If SendGrid continues to cause issues, consider trying an alternative service like Resend.com or Mailgun
 
 ## Security Considerations
 

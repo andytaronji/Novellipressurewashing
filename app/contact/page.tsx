@@ -64,9 +64,37 @@ export default function ContactPage() {
         service: '',
         message: ''
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting form:', error);
-      setSubmitError(error instanceof Error ? error.message : 'There was an error submitting your form. Please try again.');
+      
+      // Extract detailed error message if available
+      let errorMessage = 'There was an error submitting your form. Please try again.';
+      
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      
+      // Check if there's a response with more details
+      if (error.response) {
+        try {
+          const responseData = await error.response.json();
+          if (responseData.error) {
+            errorMessage = responseData.error;
+            
+            // Add details if available
+            if (responseData.details && responseData.details.errors) {
+              const detailErrors = responseData.details.errors;
+              errorMessage += ': ' + detailErrors.map((err: any) => err.message).join(', ');
+            } else if (responseData.message) {
+              errorMessage += ': ' + responseData.message;
+            }
+          }
+        } catch (e) {
+          console.error('Error parsing error response:', e);
+        }
+      }
+      
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }

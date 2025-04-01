@@ -10,8 +10,18 @@ export async function POST(request: NextRequest) {
   try {
     // Check if SendGrid API key is configured
     if (!process.env.SENDGRID_API_KEY) {
+      console.error('SendGrid API key is not configured');
       return NextResponse.json(
-        { error: 'Email service is not configured' },
+        { error: 'Email service is not configured. SENDGRID_API_KEY is missing.' },
+        { status: 500 }
+      );
+    }
+
+    // Check if FROM_EMAIL is configured
+    if (!process.env.FROM_EMAIL) {
+      console.error('FROM_EMAIL is not configured');
+      return NextResponse.json(
+        { error: 'Email service is not configured. FROM_EMAIL is missing.' },
         { status: 500 }
       );
     }
@@ -28,10 +38,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Log environment variables (without sensitive data)
+    console.log('Environment check:', {
+      hasApiKey: !!process.env.SENDGRID_API_KEY,
+      fromEmail: process.env.FROM_EMAIL,
+      toEmail: process.env.TO_EMAIL || 'novellipw@gmail.com'
+    });
+
     // Construct email content
     const emailContent = {
       to: process.env.TO_EMAIL || 'novellipw@gmail.com',
-      from: process.env.FROM_EMAIL || 'noreply@yourdomain.com', // Must be verified in SendGrid
+      from: process.env.FROM_EMAIL, // Must be verified in SendGrid
       subject: `New Contact Form Submission from ${name}`,
       text: `
         Name: ${name}
@@ -53,15 +70,40 @@ export async function POST(request: NextRequest) {
       `,
     };
 
-    // Send email
-    await sgMail.send(emailContent);
-
-    // Return success response
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error sending email:', error);
+    try {
+      // Send email
+      console.log('Attempting to send email...');
+      const response = await sgMail.send(emailContent);
+      console.log('SendGrid response:', response[0].statusCode);
+      
+      // Return success response
+      return NextResponse.json({ success: true });
+    } catch (sendGridError: any) {
+      // Handle SendGrid specific errors
+      console.error('SendGrid Error:', sendGridError);
+      
+      if (sendGridError.response) {
+        console.error('SendGrid Error Body:', sendGridError.response.body);
+        
+        // Return more specific error message
+        return NextResponse.json(
+          { 
+            error: 'Failed to send email', 
+            details: sendGridError.response.body 
+          },
+          { status: 500 }
+        );
+      }
+      
+      throw sendGridError; // Re-throw for general error handling
+    }
+  } catch (error: any) {
+    console.error('Error in contact API route:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { 
+        error: 'Failed to send email',
+        message: error.message || 'Unknown error'
+      },
       { status: 500 }
     );
   }
