@@ -54,6 +54,24 @@ const Header = () => {
             Services
           </Link>
           <Link 
+            href="/service-areas" 
+            className="text-dark hover:text-accent transition-colors font-heading font-medium border-b-2 border-transparent hover:border-accent"
+          >
+            Service Areas
+          </Link>
+          <Link 
+            href="/blog" 
+            className="text-dark hover:text-accent transition-colors font-heading font-medium border-b-2 border-transparent hover:border-accent"
+          >
+            Blog
+          </Link>
+          <Link 
+            href="/faq" 
+            className="text-dark hover:text-accent transition-colors font-heading font-medium border-b-2 border-transparent hover:border-accent"
+          >
+            FAQ
+          </Link>
+          <Link 
             href="/about" 
             className="text-dark hover:text-accent transition-colors font-heading font-medium border-b-2 border-transparent hover:border-accent"
           >
@@ -115,6 +133,27 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
+            </Link>
+            <Link 
+              href="/service-areas" 
+              className="text-dark hover:text-accent transition-colors py-2 font-heading font-medium border-l-2 border-transparent hover:border-accent pl-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Service Areas
+            </Link>
+            <Link 
+              href="/blog" 
+              className="text-dark hover:text-accent transition-colors py-2 font-heading font-medium border-l-2 border-transparent hover:border-accent pl-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link 
+              href="/faq" 
+              className="text-dark hover:text-accent transition-colors py-2 font-heading font-medium border-l-2 border-transparent hover:border-accent pl-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              FAQ
             </Link>
             <Link 
               href="/about" 

@@ -16,10 +16,10 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-heading">
-              Professional Pressure Washing Services
+              Professional Pressure Washing Near Me
             </h1>
             <p className="text-xl mb-8 max-w-lg">
-              Restore the beauty of your property with our expert pressure washing services in Charlotte, NC and surrounding areas.
+              Looking for pressure washing near you? Restore the beauty of your property with our expert pressure washing services in Charlotte, Matthews, Huntersville, and all surrounding areas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/contact" size="lg">
