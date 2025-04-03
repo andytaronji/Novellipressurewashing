@@ -44,11 +44,12 @@ export function getResponsiveImageUrl(publicId: string, options: Record<string, 
  */
 export async function uploadImage(file: File, folder?: string) {
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'di4phdven';
+  const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || 'novelli_uploads';
   
   // Create a FormData object to send the file
   const formData = new FormData();
   formData.append('file', file);
-  formData.append('upload_preset', 'ml_default'); // You can create custom upload presets in Cloudinary dashboard
+  formData.append('upload_preset', uploadPreset); // Use the environment variable
   
   if (folder) {
     formData.append('folder', folder);
