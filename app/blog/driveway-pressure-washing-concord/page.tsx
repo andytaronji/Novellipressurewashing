@@ -42,15 +42,12 @@ const DrivewayPressureWashingConcordPost = () => {
           {/* Featured Image */}
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
-              <CloudinaryImage
-                publicId="450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn"
+              <Image
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643611/450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn"
                 alt="Pressure washing a concrete driveway in Concord, NC"
                 fill
                 priority
-                transformations={{ 
-                  quality: 90, 
-                  dpr: '2.0'
-                }}
+                sizes="(max-width: 768px) 100vw, 800px"
                 style={{ objectFit: 'cover' }}
               />
             </div>
@@ -305,14 +302,11 @@ const DrivewayPressureWashingConcordPost = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="6215666345_7923d39f34_b_xlhcj6"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/6215666345_7923d39f34_b_xlhcj6"
                     alt="Top 5 Pressure Washing Tips for Charlotte Homes"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
@@ -331,14 +325,11 @@ const DrivewayPressureWashingConcordPost = () => {
               
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="US_Navy_050324-N-3019M-002_Engineman_1st_Class_Joe_Sweeting_2C_assigned_to_Mobile_Diving_Salvage_Unit_One__28MDSU-1_29_2C_uses_a_pressure_washer_to_clean_a_sidewalk_and_remove_unwanted_debris_during_a_community_relations_project_s4lesa"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643613/US_Navy_050324-N-3019M-002_Engineman_1st_Class_Joe_Sweeting_2C_assigned_to_Mobile_Diving_Salvage_Unit_One__28MDSU-1_29_2C_uses_a_pressure_washer_to_clean_a_sidewalk_and_remove_unwanted_debris_during_a_community_relations_project_s4lesa"
                     alt="Commercial Pressure Washing Services in Huntersville"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>

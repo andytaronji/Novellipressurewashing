@@ -37,13 +37,13 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="md:w-1/2 relative h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
-              <CloudinaryImage
-                publicId="shutterstock_1093680761_rhg65j"
+              <Image
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/shutterstock_1093680761_rhg65j"
                 alt="Our professional team"
                 fill
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
-                transformations={{ width: 800, height: 600, crop: 'fill' }}
               />
             </div>
           </div>

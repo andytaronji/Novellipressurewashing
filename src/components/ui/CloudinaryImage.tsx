@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { getResponsiveImageUrl } from '@/lib/cloudinary';
 
 interface CloudinaryImageProps {
   publicId: string;
@@ -27,8 +26,19 @@ export default function CloudinaryImage({
   fill = false,
   style,
 }: CloudinaryImageProps) {
-  // Generate the Cloudinary URL with responsive sizing
-  const imageUrl = getResponsiveImageUrl(publicId, transformations);
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'di4phdven';
+  
+  // Build the transformation string
+  let transformationStr = '';
+  if (Object.keys(transformations).length > 0) {
+    const transformationParams = Object.entries(transformations)
+      .map(([key, value]) => `${key}_${value}`)
+      .join('/');
+    transformationStr = `${transformationParams}/`;
+  }
+  
+  // Generate the Cloudinary URL with version number
+  const imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/v1743643610/${transformationStr}${publicId}`;
 
   return (
     <Image

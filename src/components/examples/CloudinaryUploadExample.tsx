@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef } from 'react';
 import useCloudinaryUpload from '@/hooks/useCloudinaryUpload';
 import CloudinaryImage from '@/components/ui/CloudinaryImage';

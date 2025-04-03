@@ -33,12 +33,13 @@ export default function ServicesPage() {
               >
                 <div className="md:w-1/2 relative h-[400px] w-full rounded-xl overflow-hidden shadow-lg">
                   {service.image.includes('res.cloudinary.com') ? (
-                    // Extract the public ID from the Cloudinary URL
-                    <CloudinaryImage
-                      publicId={service.image.split('/upload/')[1]}
+                    // Already a full Cloudinary URL
+                    <Image
+                      src={service.image}
                       alt={service.title}
                       fill
                       style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : service.image.startsWith('http') ? (
                     // Regular image URL
@@ -47,15 +48,16 @@ export default function ServicesPage() {
                       alt={service.title}
                       fill
                       style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : (
-                    // Cloudinary public ID
-                    <CloudinaryImage
-                      publicId={service.image}
+                    // Cloudinary public ID - convert to full URL with version
+                    <Image
+                      src={`https://res.cloudinary.com/di4phdven/image/upload/v1743643610/${service.image}`}
                       alt={service.title}
                       fill
                       style={{ objectFit: 'cover' }}
-                      transformations={{ width: 800, height: 600, crop: 'fill' }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   )}
                 </div>

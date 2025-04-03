@@ -35,13 +35,13 @@ const Hero = () => {
           
           <div className="md:w-1/2 relative">
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <CloudinaryImage
-                publicId="home-power-washing-belmont-nc-1_rekw2r"
+              <Image
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/home-power-washing-belmont-nc-1_rekw2r"
                 alt="Pressure washing service in action"
                 fill
                 style={{ objectFit: 'cover' }}
                 priority
-                transformations={{ width: 800, height: 600, crop: 'fill' }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
             

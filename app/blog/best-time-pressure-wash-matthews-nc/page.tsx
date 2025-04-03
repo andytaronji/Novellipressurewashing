@@ -42,15 +42,12 @@ const BestTimePressureWashMatthewsPost = () => {
           {/* Featured Image */}
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
-              <CloudinaryImage
-                publicId="4729879117_239642f56e_c_oqvxoy"
+              <Image
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643609/4729879117_239642f56e_c_oqvxoy"
                 alt="Pressure washing a home in Matthews, NC"
                 fill
                 priority
-                transformations={{ 
-                  quality: 90, 
-                  dpr: '2.0'
-                }}
+                sizes="(max-width: 768px) 100vw, 800px"
                 style={{ objectFit: 'cover' }}
               />
             </div>
@@ -262,14 +259,11 @@ const BestTimePressureWashMatthewsPost = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="6215666345_7923d39f34_b_xlhcj6"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/6215666345_7923d39f34_b_xlhcj6"
                     alt="Top 5 Pressure Washing Tips for Charlotte Homes"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
@@ -288,14 +282,11 @@ const BestTimePressureWashMatthewsPost = () => {
               
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="29682794650_60fe81c119_b_pxbkdc"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643608/29682794650_60fe81c119_b_pxbkdc"
                     alt="Finding Quality Pressure Washing Near Me in Indian Trail: A Local Guide"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>

@@ -42,15 +42,12 @@ const PressureWashingNearMeIndianTrailPost = () => {
           {/* Featured Image */}
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
-              <CloudinaryImage
-                publicId="29682794650_60fe81c119_b_pxbkdc"
+              <Image
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643608/29682794650_60fe81c119_b_pxbkdc"
                 alt="Pressure washing service in Indian Trail, NC"
                 fill
                 priority
-                transformations={{ 
-                  quality: 90, 
-                  dpr: '2.0'
-                }}
+                sizes="(max-width: 768px) 100vw, 800px"
                 style={{ objectFit: 'cover' }}
               />
             </div>
@@ -238,14 +235,11 @@ const PressureWashingNearMeIndianTrailPost = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="4729879117_239642f56e_c_oqvxoy"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643609/4729879117_239642f56e_c_oqvxoy"
                     alt="When is the Best Time to Pressure Wash Your Home in Matthews, NC?"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
@@ -264,14 +258,11 @@ const PressureWashingNearMeIndianTrailPost = () => {
               
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643611/450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn"
                     alt="How to Restore Your Driveway with Pressure Washing in Concord, NC"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>

@@ -27,12 +27,13 @@ const Card = ({
       {image && (
         <div className="relative w-full h-48 mb-4 overflow-hidden rounded-t-lg">
           {image.includes('res.cloudinary.com') ? (
-            // Extract the public ID from the Cloudinary URL
-            <CloudinaryImage
-              publicId={image.split('/upload/')[1]}
+            // Already a full Cloudinary URL
+            <Image
+              src={image}
               alt={title}
               fill
               style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : image.startsWith('http') ? (
             // Regular image URL
@@ -41,15 +42,16 @@ const Card = ({
               alt={title}
               fill
               style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : (
-            // Cloudinary public ID
-            <CloudinaryImage
-              publicId={image}
+            // Cloudinary public ID - convert to full URL with version
+            <Image
+              src={`https://res.cloudinary.com/di4phdven/image/upload/v1743643610/${image}`}
               alt={title}
               fill
               style={{ objectFit: 'cover' }}
-              transformations={{ width: 800, height: 600, crop: 'fill' }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           )}
         </div>

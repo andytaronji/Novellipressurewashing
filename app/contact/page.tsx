@@ -351,15 +351,12 @@ export default function ContactPage() {
           
           <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-5xl mx-auto">
             <div className="relative h-[400px] w-full">
-              <CloudinaryImage
-                publicId="center-city-charlotte_l4vibu"
+              <Image
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/center-city-charlotte_l4vibu"
                 alt="Charlotte skyline view"
                 fill
                 priority
-                transformations={{ 
-                  quality: 90, 
-                  dpr: '2.0'
-                }}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 style={{ objectFit: 'cover' }}
               />
             </div>

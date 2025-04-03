@@ -334,14 +334,11 @@ const SoftWashingVsPressureWashingGastoniaPost = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643611/450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn"
                     alt="How to Restore Your Driveway with Pressure Washing in Concord, NC"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
@@ -360,14 +357,11 @@ const SoftWashingVsPressureWashingGastoniaPost = () => {
               
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <CloudinaryImage
-                    publicId="6215666345_7923d39f34_b_xlhcj6"
+                  <Image
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/6215666345_7923d39f34_b_xlhcj6"
                     alt="Top 5 Pressure Washing Tips for Charlotte Homes"
                     fill
-                    transformations={{ 
-                      quality: 90, 
-                      dpr: '2.0'
-                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>

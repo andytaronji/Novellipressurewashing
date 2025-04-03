@@ -103,15 +103,12 @@ const BlogPage = () => {
               <div className="md:flex">
                 <div className="md:w-1/2">
                   <div className="relative h-64 md:h-full">
-                    <CloudinaryImage
-                      publicId={blogPosts[0].cloudinaryId as string}
+                    <Image
+                      src={blogPosts[0].image}
                       alt={blogPosts[0].title}
                       fill
                       priority
-                      transformations={{ 
-                        quality: 90, 
-                        dpr: '2.0'
-                      }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ objectFit: 'cover' }}
                     />
                   </div>
@@ -147,26 +144,13 @@ const BlogPage = () => {
             {blogPosts.slice(1).map((post) => (
               <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div className="relative h-48">
-                  {post.cloudinaryId ? (
-                    <CloudinaryImage
-                      publicId={post.cloudinaryId}
-                      alt={post.title}
-                      fill
-                      transformations={{ 
-                        quality: 90, 
-                        dpr: '2.0'
-                      }}
-                      style={{ objectFit: 'cover' }}
-                    />
-                  ) : (
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      style={{ objectFit: 'cover' }}
-                    />
-                  )}
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center text-sm text-gray-500 mb-2">
