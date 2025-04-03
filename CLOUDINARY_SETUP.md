@@ -1,151 +1,132 @@
-# Cloudinary Integration
+# Cloudinary Setup Guide
 
-This project uses Cloudinary for image storage, optimization, and delivery. This document provides an overview of how Cloudinary is integrated and how to use it in the application.
+This document provides instructions for setting up and using Cloudinary in this project.
 
 ## Environment Variables
 
-The following environment variables are required for Cloudinary integration:
+Add the following environment variables to your `.env.local` file:
 
 ```
+# Cloudinary configuration
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=di4phdven
-CLOUDINARY_API_KEY=your_api_key_here
-CLOUDINARY_API_SECRET=your_api_secret_here
+CLOUDINARY_API_KEY=665261946922738
+CLOUDINARY_API_SECRET=ckL7kctCjN5858_CmCVDBrv55Jw
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=novelli_uploads
 ```
 
-These variables are already set up in the `.env.local` file. 
+## Creating an Upload Preset
 
-> **IMPORTANT SECURITY NOTE**: Never commit your actual API key and secret to version control or include them in public documentation. The values above are placeholders. The real values should only be stored in your `.env.local` file, which should be excluded from version control.
+1. Log in to your Cloudinary Dashboard at https://cloudinary.com/console
+2. Navigate to Settings > Upload
+3. Scroll down to the "Upload presets" section
+4. Click "Add upload preset"
+5. Configure the preset:
+   - Name: `novelli_uploads` (or match the name in your environment variables)
+   - Signing Mode: Choose "Unsigned" (for client-side uploads)
+   - Folder: Optionally specify a default folder
+   - Allowed Formats: Restrict to image formats if needed
+   - Set any other options as needed
+6. Click "Save"
 
-## Core Files
-
-The Cloudinary integration consists of the following core files:
-
-1. **`src/lib/cloudinary.ts`**: Configures and exports the Cloudinary instance and helper functions.
-2. **`src/components/ui/CloudinaryImage.tsx`**: A reusable component for displaying optimized images from Cloudinary.
-3. **`src/hooks/useCloudinaryUpload.ts`**: A React hook for uploading images to Cloudinary from the client side.
-4. **`app/api/cloudinary/upload/route.ts`**: An API route for uploading images to Cloudinary from the server side.
-
-## Usage Examples
+## Using Cloudinary in the Project
 
 ### Displaying Images
 
-To display an image from Cloudinary, use the `CloudinaryImage` component:
+Use the `CloudinaryImage` component to display images:
 
-```tsx
+```jsx
 import CloudinaryImage from '@/components/ui/CloudinaryImage';
 
-// In your component
+// Basic usage
 <CloudinaryImage
-  publicId="examples/sample"
-  alt="Sample image"
-  width={400}
-  height={300}
-  className="w-full h-auto"
-  // Optional transformations
-  transformations={{
-    crop: 'fill',
-    gravity: 'auto',
+  publicId="example_image_id"
+  alt="Description of the image"
+  width={800}
+  height={600}
+/>
+
+// With transformations
+<CloudinaryImage
+  publicId="example_image_id"
+  alt="Description of the image"
+  width={800}
+  height={600}
+  transformations={{ 
+    quality: 90, 
+    dpr: '2.0'
   }}
 />
+
+// Using fill mode (for responsive layouts)
+<div className="relative h-48">
+  <CloudinaryImage
+    publicId="example_image_id"
+    alt="Description of the image"
+    fill
+    style={{ objectFit: 'cover' }}
+  />
+</div>
 ```
 
-### Uploading Images (Client-Side)
+### Uploading Images
 
-To upload an image from the client side, use the `useCloudinaryUpload` hook:
+Use the `useCloudinaryUpload` hook to upload images:
 
-```tsx
-import { useRef } from 'react';
+```jsx
+import { useState } from 'react';
 import useCloudinaryUpload from '@/hooks/useCloudinaryUpload';
 
-// In your component
-const fileInputRef = useRef<HTMLInputElement>(null);
-const { uploadState, uploadImage } = useCloudinaryUpload();
+function ImageUploader() {
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const { uploadState, uploadImage } = useCloudinaryUpload();
 
-const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-  const file = e.target.files?.[0];
-  if (!file) return;
+  const handleFileChange = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
 
-  try {
-    // Upload the image to Cloudinary
-    // Optionally specify a folder
-    const result = await uploadImage(file, 'my-folder');
-    
-    // The result contains the Cloudinary response, including:
-    // - public_id: The public ID of the uploaded image
-    // - secure_url: The HTTPS URL of the uploaded image
-    console.log(result);
-  } catch (error) {
-    console.error('Error uploading image:', error);
-  }
-};
-
-// In your JSX
-<input
-  type="file"
-  ref={fileInputRef}
-  onChange={handleFileChange}
-  accept="image/*"
-/>
-```
-
-### Uploading Images (Server-Side)
-
-To upload an image from the server side, use the Cloudinary API directly:
-
-```tsx
-import cloudinary from '@/lib/cloudinary';
-
-// In your server-side code
-const uploadImage = (base64Image: string, folder?: string) => {
-  return new Promise((resolve, reject) => {
-    const uploadOptions: any = {
-      resource_type: 'auto',
-    };
-    
-    if (folder) {
-      uploadOptions.folder = folder;
+    try {
+      // Upload the image to Cloudinary
+      const result = await uploadImage(file, 'optional_folder_name');
+      
+      // Store the uploaded image public ID
+      setUploadedImage(result.public_id);
+    } catch (error) {
+      console.error('Error uploading image:', error);
     }
-    
-    cloudinary.uploader.upload(base64Image, uploadOptions, (error, result) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(result);
-      }
-    });
-  });
-};
+  };
+
+  return (
+    <div>
+      <input type="file" onChange={handleFileChange} accept="image/*" />
+      
+      {uploadState.isUploading && (
+        <div>Uploading: {uploadState.progress}%</div>
+      )}
+      
+      {uploadedImage && (
+        <div>
+          <p>Uploaded Image:</p>
+          <CloudinaryImage
+            publicId={uploadedImage}
+            alt="Uploaded image"
+            width={400}
+            height={300}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
 ```
 
-### Getting Cloudinary URLs
+## Troubleshooting
 
-To get a Cloudinary URL for an image, use the helper functions in `src/lib/cloudinary.ts`:
+If you encounter issues with Cloudinary uploads:
 
-```tsx
-import { getCloudinaryImageUrl, getResponsiveImageUrl } from '@/lib/cloudinary';
+1. Check that your upload preset is configured correctly in the Cloudinary dashboard
+2. Verify that all environment variables are set correctly
+3. Ensure the upload preset is set to "unsigned" for client-side uploads
+4. Check browser console for any error messages
+5. Verify network requests in the browser's developer tools
 
-// Get a basic Cloudinary URL
-const imageUrl = getCloudinaryImageUrl('examples/sample');
-
-// Get a responsive Cloudinary URL
-const responsiveUrl = getResponsiveImageUrl('examples/sample', {
-  crop: 'fill',
-  gravity: 'auto',
-});
-```
-
-## Example Page
-
-An example page demonstrating Cloudinary integration is available at `/cloudinary-example`. This page shows how to upload and display images using Cloudinary.
-
-## Cloudinary Dashboard
-
-You can manage your Cloudinary resources through the Cloudinary dashboard:
-
-[https://cloudinary.com/console](https://cloudinary.com/console)
-
-## Additional Resources
-
-- [Cloudinary Documentation](https://cloudinary.com/documentation)
-- [Cloudinary React SDK](https://cloudinary.com/documentation/react_integration)
-- [Cloudinary Node.js SDK](https://cloudinary.com/documentation/node_integration)
+For more information, refer to the [Cloudinary documentation](https://cloudinary.com/documentation).

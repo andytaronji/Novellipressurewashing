@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { uploadImage } from '@/lib/cloudinary';
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,8 +16,45 @@ export async function POST(request: NextRequest) {
     // Get the folder from the form data (optional)
     const folder = formData.get('folder') as string | undefined;
     
-    // Upload to Cloudinary using our helper function
-    const result = await uploadImage(file, folder);
+    // Get Cloudinary configuration from environment variables
+    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+    const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+    
+    if (!cloudName || !uploadPreset) {
+      return NextResponse.json(
+        { error: 'Cloudinary configuration is missing' },
+        { status: 500 }
+      );
+    }
+    
+    // Create a new FormData to send to Cloudinary
+    const cloudinaryFormData = new FormData();
+    cloudinaryFormData.append('file', file);
+    cloudinaryFormData.append('upload_preset', uploadPreset);
+    
+    if (folder) {
+      cloudinaryFormData.append('folder', folder);
+    }
+
+    // Upload directly to Cloudinary
+    const response = await fetch(
+      `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+      {
+        method: 'POST',
+        body: cloudinaryFormData,
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Cloudinary API error:', errorData);
+      return NextResponse.json(
+        { error: errorData.error?.message || 'Failed to upload to Cloudinary' },
+        { status: response.status }
+      );
+    }
+
+    const result = await response.json();
 
     // Return the Cloudinary response
     return NextResponse.json(result);
