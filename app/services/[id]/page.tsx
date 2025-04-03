@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import services from '@/data/services.json';
 import siteConfig from '@/data/siteConfig.json';
 
@@ -45,12 +46,32 @@ export default function ServiceDetailPage() {
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="md:w-2/3">
               <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-lg mb-8">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
+                {service.image.includes('res.cloudinary.com') ? (
+                  // Extract the public ID from the Cloudinary URL
+                  <CloudinaryImage
+                    publicId={service.image.split('/upload/')[1]}
+                    alt={service.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                ) : service.image.startsWith('http') ? (
+                  // Regular image URL
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                ) : (
+                  // Cloudinary public ID
+                  <CloudinaryImage
+                    publicId={service.image}
+                    alt={service.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    transformations={{ width: 800, height: 600, crop: 'fill' }}
+                  />
+                )}
               </div>
               
               <div className="prose max-w-none">
@@ -69,43 +90,6 @@ export default function ServiceDetailPage() {
                   ))}
                 </ul>
                 
-                <h3 className="text-2xl font-bold mb-4">Before & After</h3>
-                <p className="text-lg text-gray-700 mb-6">
-                  See the difference our professional pressure washing services can make. These before and after photos showcase the dramatic transformation we can achieve for your property.
-                </p>
-              </div>
-              
-              {/* Before & After Gallery */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                {service.beforeAfterImages.map((image, idx) => (
-                  <div key={idx} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="relative h-[200px] w-full rounded-lg overflow-hidden shadow-md">
-                        <Image
-                          src={image.before}
-                          alt={`Before - ${image.caption}`}
-                          fill
-                          style={{ objectFit: 'cover' }}
-                        />
-                        <div className="absolute bottom-0 left-0 bg-white bg-opacity-75 text-black px-2 py-1 text-sm">
-                          Before
-                        </div>
-                      </div>
-                      <div className="relative h-[200px] w-full rounded-lg overflow-hidden shadow-md">
-                        <Image
-                          src={image.after}
-                          alt={`After - ${image.caption}`}
-                          fill
-                          style={{ objectFit: 'cover' }}
-                        />
-                        <div className="absolute bottom-0 left-0 bg-white bg-opacity-75 text-black px-2 py-1 text-sm">
-                          After
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-center text-gray-700">{image.caption}</p>
-                  </div>
-                ))}
               </div>
             </div>
             

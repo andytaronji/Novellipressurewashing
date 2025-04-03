@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import siteConfig from '@/data/siteConfig.json';
 
 export default function AboutPage() {
@@ -36,11 +37,13 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="md:w-1/2 relative h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&h=600&auto=format&fit=crop"
+              <CloudinaryImage
+                publicId="shutterstock_1093680761_rhg65j"
                 alt="Our professional team"
                 fill
+                priority
                 style={{ objectFit: 'cover' }}
+                transformations={{ width: 800, height: 600, crop: 'fill' }}
               />
             </div>
           </div>

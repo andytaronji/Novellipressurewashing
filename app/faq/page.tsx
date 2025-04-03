@@ -79,103 +79,109 @@ const faqItems = [
 
 const FAQPage = () => {
   return (
-    <div className="py-16 bg-light">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary font-heading">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to common questions about our pressure washing services in Charlotte and surrounding areas.
-          </p>
-        </div>
-
-        {/* Search for FAQ - This would need JavaScript implementation for actual functionality */}
-        <div className="max-w-2xl mx-auto mb-12">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search for questions..."
-              className="w-full py-3 px-4 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            />
-            <div className="absolute right-3 top-3 text-gray-400">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
+    <div className="pt-16">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h1>
+            <p className="text-xl mb-8">
+              Find answers to common questions about our pressure washing services in Charlotte and surrounding areas.
+            </p>
           </div>
         </div>
+      </section>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <details className="group">
-                  <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-6">
-                    <span className="text-lg font-bold text-primary font-heading">{item.question}</span>
-                    <span className="transition group-open:rotate-180">
-                      <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                        <path d="M6 9l6 6 6-6"></path>
-                      </svg>
-                    </span>
-                  </summary>
-                  <div className="px-6 pb-6 pt-0 text-gray-700">
-                    <p>{item.answer}</p>
-                  </div>
-                </details>
+      {/* Content Section */}
+      <section className="py-16 bg-light">
+        <div className="container mx-auto px-4">
+          {/* Search for FAQ - This would need JavaScript implementation for actual functionality */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search for questions..."
+                className="w-full py-3 px-4 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+              <div className="absolute right-3 top-3 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Still Have Questions */}
-        <div className="mt-16 max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4 text-primary font-heading">Still Have Questions?</h2>
-            <p className="text-lg mb-6 text-gray-600">
-              If you couldn't find the answer to your question, please feel free to contact us directly. We're here to help!
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link 
-                href="/contact" 
-                className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
-              >
-                Contact Us
-              </Link>
-              <a 
-                href={`tel:${siteConfig.businessInfo.phone}`} 
-                className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
-              >
-                Call {siteConfig.businessInfo.phone}
-              </a>
             </div>
           </div>
-        </div>
 
-        {/* Local Service Areas */}
-        <div className="mt-16 bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg shadow-lg">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4 font-heading">Looking for Pressure Washing Near Me?</h2>
-            <p className="text-xl mb-6 max-w-3xl mx-auto">
-              We provide professional pressure washing services throughout Charlotte and surrounding areas including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              {siteConfig.businessInfo.serviceAreas.map((area, index) => (
-                <span key={index} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-white">
-                  {area}, NC
-                </span>
+          {/* FAQ Accordion */}
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <details className="group">
+                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-6">
+                      <span className="text-lg font-bold text-primary font-heading">{item.question}</span>
+                      <span className="transition group-open:rotate-180">
+                        <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+                          <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 pt-0 text-gray-700">
+                      <p>{item.answer}</p>
+                    </div>
+                  </details>
+                </div>
               ))}
             </div>
-            <Link 
-              href="/service-areas" 
-              className="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition-colors duration-300"
-            >
-              View Our Service Areas
-            </Link>
+          </div>
+
+          {/* Still Have Questions */}
+          <div className="mt-16 max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div className="text-center">
+              <h2 className="text-2xl font-bold mb-4 text-primary font-heading">Still Have Questions?</h2>
+              <p className="text-lg mb-6 text-gray-600">
+                If you couldn't find the answer to your question, please feel free to contact us directly. We're here to help!
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link 
+                  href="/contact" 
+                  className="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
+                >
+                  Contact Us
+                </Link>
+                <a 
+                  href={`tel:${siteConfig.businessInfo.phone}`} 
+                  className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
+                >
+                  Call {siteConfig.businessInfo.phone}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Local Service Areas */}
+          <div className="mt-16 bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg shadow-lg">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-4 font-heading">Looking for Pressure Washing Near Me?</h2>
+              <p className="text-xl mb-6 max-w-3xl mx-auto">
+                We provide professional pressure washing services throughout Charlotte and surrounding areas including:
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 mb-8">
+                {siteConfig.businessInfo.serviceAreas.map((area, index) => (
+                  <span key={index} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-white">
+                    {area}, NC
+                  </span>
+                ))}
+              </div>
+              <Link 
+                href="/service-areas" 
+                className="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition-colors duration-300"
+              >
+                View Our Service Areas
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

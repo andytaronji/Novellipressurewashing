@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import Button from '@/components/ui/Button';
 import siteConfig from '@/data/siteConfig.json';
 
@@ -350,10 +351,15 @@ export default function ContactPage() {
           
           <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-5xl mx-auto">
             <div className="relative h-[400px] w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=800&h=600&auto=format&fit=crop"
-                alt="Service area map"
+              <CloudinaryImage
+                publicId="center-city-charlotte_l4vibu"
+                alt="Charlotte skyline view"
                 fill
+                priority
+                transformations={{ 
+                  quality: 90, 
+                  dpr: '2.0'
+                }}
                 style={{ objectFit: 'cover' }}
               />
             </div>

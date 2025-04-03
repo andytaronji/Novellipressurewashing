@@ -2,7 +2,9 @@
 
 import Image from 'next/image';
 import Button from '../ui/Button';
+import CloudinaryImage from '../ui/CloudinaryImage';
 import siteConfig from '@/data/siteConfig.json';
+import { getResponsiveImageUrl } from '@/lib/cloudinary';
 
 const Hero = () => {
   return (
@@ -33,12 +35,13 @@ const Hero = () => {
           
           <div className="md:w-1/2 relative">
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?q=80&w=800&h=600&auto=format&fit=crop"
+              <CloudinaryImage
+                publicId="home-power-washing-belmont-nc-1_rekw2r"
                 alt="Pressure washing service in action"
                 fill
                 style={{ objectFit: 'cover' }}
                 priority
+                transformations={{ width: 800, height: 600, crop: 'fill' }}
               />
             </div>
             

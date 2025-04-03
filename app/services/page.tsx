@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import services from '@/data/services.json';
 import Button from '@/components/ui/Button';
+import CloudinaryImage from '@/components/ui/CloudinaryImage';
 
 export default function ServicesPage() {
   return (
@@ -31,12 +32,32 @@ export default function ServicesPage() {
                 className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
               >
                 <div className="md:w-1/2 relative h-[400px] w-full rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
+                  {service.image.includes('res.cloudinary.com') ? (
+                    // Extract the public ID from the Cloudinary URL
+                    <CloudinaryImage
+                      publicId={service.image.split('/upload/')[1]}
+                      alt={service.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  ) : service.image.startsWith('http') ? (
+                    // Regular image URL
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  ) : (
+                    // Cloudinary public ID
+                    <CloudinaryImage
+                      publicId={service.image}
+                      alt={service.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      transformations={{ width: 800, height: 600, crop: 'fill' }}
+                    />
+                  )}
                 </div>
                 <div className="md:w-1/2">
                   <h2 className="text-3xl font-bold mb-4">{service.title}</h2>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -41,13 +42,16 @@ const PressureWashingNearMeIndianTrailPost = () => {
           {/* Featured Image */}
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
-              <Image
-                src="https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=1200&h=600&auto=format&fit=crop"
+              <CloudinaryImage
+                publicId="29682794650_60fe81c119_b_pxbkdc"
                 alt="Pressure washing service in Indian Trail, NC"
                 fill
-                sizes="(max-width: 768px) 100vw, 1200px"
-                style={{ objectFit: 'cover' }}
                 priority
+                transformations={{ 
+                  quality: 90, 
+                  dpr: '2.0'
+                }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -141,8 +145,8 @@ const PressureWashingNearMeIndianTrailPost = () => {
               </li>
             </ol>
 
-            <div className="bg-primary bg-opacity-10 p-6 rounded-lg mb-8 border-l-4 border-primary">
-              <h3 className="text-xl font-bold text-primary mb-3 font-heading">Local Tip</h3>
+            <div className="bg-primary bg-opacity-10 p-6 rounded-lg mb-8 border-l-4 border-primary text-white">
+              <h3 className="text-xl font-bold text-white mb-3 font-heading">Local Tip</h3>
               <p className="mb-0">
                 Many Indian Trail homeowners find that scheduling regular pressure washing in early spring helps remove winter grime and prepare properties for the summer season. Ask about maintenance plans that can save you money on regular service.
               </p>
@@ -234,11 +238,14 @@ const PressureWashingNearMeIndianTrailPost = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=600&h=400&auto=format&fit=crop"
+                  <CloudinaryImage
+                    publicId="4729879117_239642f56e_c_oqvxoy"
                     alt="When is the Best Time to Pressure Wash Your Home in Matthews, NC?"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    transformations={{ 
+                      quality: 90, 
+                      dpr: '2.0'
+                    }}
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
@@ -257,11 +264,14 @@ const PressureWashingNearMeIndianTrailPost = () => {
               
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?q=80&w=600&h=400&auto=format&fit=crop"
+                  <CloudinaryImage
+                    publicId="450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn"
                     alt="How to Restore Your Driveway with Pressure Washing in Concord, NC"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    transformations={{ 
+                      quality: 90, 
+                      dpr: '2.0'
+                    }}
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
