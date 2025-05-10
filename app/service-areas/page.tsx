@@ -5,9 +5,9 @@ import siteConfig from '@/data/siteConfig.json';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pressure Washing Service Areas | Novelli Pressure Washing',
-  description: 'Novelli Pressure Washing provides professional pressure washing services near you in Charlotte, Matthews, Huntersville, Concord, and all surrounding areas in North Carolina.',
-  keywords: 'pressure washing near me, Charlotte pressure washing, Matthews pressure washing, Huntersville pressure washing, Concord pressure washing, local pressure washing services',
+  title: 'Pressure Washing Service Areas in the Greater Charlotte Area | Novelli Pressure Washing',
+  description: 'Novelli Pressure Washing provides professional pressure washing services throughout the Greater Charlotte Area including Charlotte, Matthews, Huntersville, Belmont, Concord, Gastonia, Mint Hill, Indian Trail, and Pineville.',
+  keywords: 'Greater Charlotte Area pressure washing, Charlotte pressure washing, Matthews pressure washing, Huntersville pressure washing, Belmont pressure washing, Concord pressure washing, Gastonia pressure washing, Mint Hill pressure washing, Indian Trail pressure washing, Pineville pressure washing, local pressure washing services',
 };
 
 const ServiceAreasPage = () => {
@@ -19,9 +19,9 @@ const ServiceAreasPage = () => {
       <section className="bg-gradient-to-r from-primary to-secondary text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Pressure Washing Near Me - Our Service Areas</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Pressure Washing in the Greater Charlotte Area</h1>
             <p className="text-xl mb-8">
-              Novelli Pressure Washing proudly serves Charlotte and the surrounding communities with top-quality pressure washing services. Find your location below.
+              Novelli Pressure Washing proudly serves the Greater Charlotte Area with top-quality pressure washing services. Find your location below to learn more about our services in your community.
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@ const ServiceAreasPage = () => {
             <div className="text-center mb-6">
               <h2 className="text-3xl font-bold mb-4 font-heading">Our Service Area</h2>
               <p className="text-xl mb-6 max-w-3xl mx-auto">
-                We proudly serve Charlotte and surrounding communities within a 30-mile radius.
+                We proudly serve the Greater Charlotte Area within a 25-mile radius, covering all major communities in the region.
               </p>
             </div>
             
@@ -93,9 +93,9 @@ const ServiceAreasPage = () => {
           {/* Call to Action */}
           <div className="mt-16 bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-lg shadow-lg">
             <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4 font-heading">Looking for "Pressure Washing Near Me"?</h2>
+              <h2 className="text-3xl font-bold mb-4 font-heading">Professional Pressure Washing in Your Community</h2>
               <p className="text-xl mb-6 max-w-3xl mx-auto">
-                You've found the best local pressure washing service in Charlotte and surrounding areas. Contact us today for a free quote!
+                You've found the Greater Charlotte Area's trusted pressure washing professionals. Serving Belmont, Charlotte, Matthews, Huntersville, and all surrounding communities. Contact us today for a free quote!
               </p>
               <Link 
                 href="/contact" 
