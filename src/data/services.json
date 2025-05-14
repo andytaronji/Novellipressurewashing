@@ -12,12 +12,12 @@
       "House washing",
       "Roof cleaning"
     ],
-    "image": "Driveway_one_xfruu8",
+    "image": "https://res.cloudinary.com/di4phdven/video/upload/v1747259878/IMG_4799_hkuetb.mp4",
     "beforeAfterImages": [
       {
-        "before": "https://images.unsplash.com/photo-1520970519539-8c9eaad9d6ed?q=80&w=400&h=300&auto=format&fit=crop",
+        "before": "https://res.cloudinary.com/di4phdven/video/upload/v1747259878/IMG_4799_hkuetb.mp4",
         "after": "https://images.unsplash.com/photo-1520970519539-8c9eaad9d6ed?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
-        "caption": "Driveway transformation"
+        "caption": "Residential pressure washing video example"
       },
       {
         "before": "https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?q=80&w=400&h=300&auto=format&fit=crop",
