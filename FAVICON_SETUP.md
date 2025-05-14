@@ -6,13 +6,14 @@ This project uses a comprehensive favicon setup to ensure proper display across 
 
 The following favicon files are included in the project:
 
-- `public/favicon.ico` - Traditional favicon format (32x32)
-- `public/favicon.png` - PNG version of the favicon
+- `public/favicon.png` - PNG version of the favicon (primary favicon)
 - `public/apple-touch-icon.png` - Icon for iOS devices (180x180)
 - `public/android-chrome-192x192.png` - Icon for Android devices (192x192)
 - `public/android-chrome-512x512.png` - Large icon for Android devices (512x512)
 - `public/site.webmanifest` - Web app manifest file for PWA support
 - `public/browserconfig.xml` - Configuration for Microsoft browsers
+
+**Note:** We've removed references to favicon.ico due to server issues with this format. Modern browsers fully support PNG favicons, making the ICO format unnecessary.
 
 ## How to Update the Favicon
 
@@ -26,7 +27,6 @@ If you need to update the favicon in the future, follow these steps:
    ```
 
 3. The script will automatically create:
-   - favicon.ico
    - apple-touch-icon.png
    - android-chrome-192x192.png
    - android-chrome-512x512.png

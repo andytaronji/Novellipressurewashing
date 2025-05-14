@@ -4,8 +4,6 @@ const sharp = require('sharp');
 
 // Path to the existing favicon.png
 const pngPath = path.join(__dirname, 'public', 'favicon.png');
-// Path for the new favicon.ico
-const icoPath = path.join(__dirname, 'public', 'favicon.ico');
 // Path for the apple-touch-icon
 const appleTouchIconPath = path.join(__dirname, 'public', 'apple-touch-icon.png');
 // Path for the android-chrome icon
@@ -17,12 +15,6 @@ async function convertFavicon() {
   try {
     console.log('Reading existing favicon.png...');
     const imageBuffer = fs.readFileSync(pngPath);
-
-    // Create favicon.ico (16x16 and 32x32 sizes)
-    console.log('Creating favicon.ico...');
-    await sharp(imageBuffer)
-      .resize(32, 32)
-      .toFile(icoPath);
     
     // Create apple-touch-icon.png (180x180)
     console.log('Creating apple-touch-icon.png...');
