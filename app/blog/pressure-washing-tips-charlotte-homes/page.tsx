@@ -43,7 +43,7 @@ const PressureWashingTipsCharlotteHomesPost = () => {
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
               <Image
-                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/6215666345_7923d39f34_b_xlhcj6"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747261769/IMG_3496_xlxzvs.jpg"
                 alt="Pressure washing a home in Charlotte, NC"
                 fill
                 priority
@@ -263,7 +263,7 @@ const PressureWashingTipsCharlotteHomesPost = () => {
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643609/4729879117_239642f56e_c_oqvxoy"
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1747261766/IMG_2884_hfmruz.jpg"
                     alt="When is the Best Time to Pressure Wash Your Home in Matthews, NC?"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

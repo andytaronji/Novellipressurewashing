@@ -43,7 +43,7 @@ const CommercialPressureWashingHuntersvillePost = () => {
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
               <Image
-                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643613/US_Navy_050324-N-3019M-002_Engineman_1st_Class_Joe_Sweeting_2C_assigned_to_Mobile_Diving_Salvage_Unit_One__28MDSU-1_29_2C_uses_a_pressure_washer_to_clean_a_sidewalk_and_remove_unwanted_debris_during_a_community_relations_project_s4lesa"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747262232/IMG_2587_pn3qv7.jpg"
                 alt="Commercial pressure washing in Huntersville, NC"
                 fill
                 priority
@@ -331,7 +331,7 @@ const CommercialPressureWashingHuntersvillePost = () => {
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/6215666345_7923d39f34_b_xlhcj6"
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1747261769/IMG_3496_xlxzvs.jpg"
                     alt="Top 5 Pressure Washing Tips for Charlotte Homes"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

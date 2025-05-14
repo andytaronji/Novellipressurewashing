@@ -43,7 +43,7 @@ const SoftWashingVsPressureWashingGastoniaPost = () => {
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
               <Image
-                src="https://images.unsplash.com/photo-1623298317883-6b70254edf31?q=80&w=800&h=600&auto=format&fit=crop"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747262415/IMG_4379_jpd1bn.jpg"
                 alt="Pressure washing vs soft washing in Gastonia, NC"
                 fill
                 sizes="(max-width: 768px) 100vw, 1200px"
@@ -358,7 +358,7 @@ const SoftWashingVsPressureWashingGastoniaPost = () => {
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/6215666345_7923d39f34_b_xlhcj6"
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1747261769/IMG_3496_xlxzvs.jpg"
                     alt="Top 5 Pressure Washing Tips for Charlotte Homes"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

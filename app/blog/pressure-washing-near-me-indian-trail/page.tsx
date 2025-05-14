@@ -43,7 +43,7 @@ const PressureWashingNearMeIndianTrailPost = () => {
           <div className="mb-8 relative rounded-lg overflow-hidden shadow-xl">
             <div className="relative w-full h-[400px]">
               <Image
-                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643608/29682794650_60fe81c119_b_pxbkdc"
+                src="https://res.cloudinary.com/di4phdven/image/upload/v1747261769/IMG_3699_aa0nwo.jpg"
                 alt="Pressure washing service in Indian Trail, NC"
                 fill
                 priority
@@ -236,7 +236,7 @@ const PressureWashingNearMeIndianTrailPost = () => {
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://res.cloudinary.com/di4phdven/image/upload/v1743643609/4729879117_239642f56e_c_oqvxoy"
+                    src="https://res.cloudinary.com/di4phdven/image/upload/v1747261766/IMG_2884_hfmruz.jpg"
                     alt="When is the Best Time to Pressure Wash Your Home in Matthews, NC?"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
