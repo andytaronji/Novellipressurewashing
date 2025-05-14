@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import CloudinaryImage from '@/components/ui/CloudinaryImage';
+import CloudinaryVideo from '@/components/ui/CloudinaryVideo';
 import services from '@/data/services.json';
 import siteConfig from '@/data/siteConfig.json';
 
@@ -46,13 +47,24 @@ export default function ServiceDetailPage() {
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="md:w-2/3">
               <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-lg mb-8">
-                {service.image.includes('res.cloudinary.com') ? (
+                {service.image.includes('.mp4') || service.image.includes('/video/') ? (
+                  // Video URL
+                  <CloudinaryVideo
+                    publicId={service.image.includes('res.cloudinary.com') ? service.image : `https://res.cloudinary.com/di4phdven/video/upload/${service.image}`}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    autoPlay={true}
+                    loop={true}
+                    muted={true}
+                    controls={true}
+                  />
+                ) : service.image.includes('res.cloudinary.com') ? (
                   // Already a full Cloudinary URL
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain' }}
                     sizes="(max-width: 768px) 100vw, 66vw"
                   />
                 ) : service.image.startsWith('http') ? (
@@ -61,7 +73,7 @@ export default function ServiceDetailPage() {
                     src={service.image}
                     alt={service.title}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain' }}
                     sizes="(max-width: 768px) 100vw, 66vw"
                   />
                 ) : (
@@ -70,7 +82,7 @@ export default function ServiceDetailPage() {
                     src={`https://res.cloudinary.com/di4phdven/image/upload/v1743643610/${service.image}`}
                     alt={service.title}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain' }}
                     sizes="(max-width: 768px) 100vw, 66vw"
                   />
                 )}
@@ -92,6 +104,71 @@ export default function ServiceDetailPage() {
                   ))}
                 </ul>
                 
+                {/* Before/After Section */}
+                {service.beforeAfterImages && service.beforeAfterImages.length > 0 && (
+                  <div className="mt-12">
+                    <h3 className="text-2xl font-bold mb-6">Before & After</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {service.beforeAfterImages.map((item, idx) => (
+                        <div key={idx} className="space-y-4">
+                          <div className="grid grid-cols-2 gap-4">
+                            <div className="relative h-[200px] rounded-lg overflow-hidden shadow-md">
+                              {/* Before Image/Video */}
+                              {item.before.includes('.mp4') || item.before.includes('/video/') ? (
+                                <CloudinaryVideo
+                                  publicId={item.before.includes('res.cloudinary.com') ? item.before : `https://res.cloudinary.com/di4phdven/video/upload/${item.before}`}
+                                  alt={`Before - ${item.caption}`}
+                                  className="w-full h-full object-cover"
+                                  autoPlay={true}
+                                  loop={true}
+                                  muted={true}
+                                  controls={true}
+                                />
+                              ) : (
+                                <Image
+                                  src={item.before}
+                                  alt={`Before - ${item.caption}`}
+                                  fill
+                                  style={{ objectFit: 'cover' }}
+                                  sizes="(max-width: 768px) 50vw, 25vw"
+                                />
+                              )}
+                              <div className="absolute top-2 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                                Before
+                              </div>
+                            </div>
+                            <div className="relative h-[200px] rounded-lg overflow-hidden shadow-md">
+                              {/* After Image/Video */}
+                              {item.after.includes('.mp4') || item.after.includes('/video/') ? (
+                                <CloudinaryVideo
+                                  publicId={item.after.includes('res.cloudinary.com') ? item.after : `https://res.cloudinary.com/di4phdven/video/upload/${item.after}`}
+                                  alt={`After - ${item.caption}`}
+                                  className="w-full h-full object-cover"
+                                  autoPlay={true}
+                                  loop={true}
+                                  muted={true}
+                                  controls={true}
+                                />
+                              ) : (
+                                <Image
+                                  src={item.after}
+                                  alt={`After - ${item.caption}`}
+                                  fill
+                                  style={{ objectFit: 'cover' }}
+                                  sizes="(max-width: 768px) 50vw, 25vw"
+                                />
+                              )}
+                              <div className="absolute top-2 left-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                After
+                              </div>
+                            </div>
+                          </div>
+                          <p className="text-center text-gray-700">{item.caption}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             

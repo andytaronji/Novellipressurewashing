@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Circular Favicon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .preview {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .original, .circular {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .circular img {
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ddd;
+    }
+    
+    .instructions {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 30px;
+    }
+    
+    .instructions ol {
+      margin-left: 20px;
+    }
+    
+    .instructions li {
+      margin-bottom: 10px;
+    }
+    
+    .code {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 3px;
+      font-family: monospace;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Circular Favicon</h1>
+  
+  <div class="container">
+    <div class="preview">
+      <div class="original">
+        <h3>Original Logo</h3>
+        <img src="/favicon.png" alt="Original Logo" width="128" height="128">
+      </div>
+      
+      <div class="circular">
+        <h3>Circular Favicon</h3>
+        <img src="/favicon.png" alt="Circular Favicon" width="128" height="128">
+      </div>
+    </div>
+    
+    <div class="instructions">
+      <h2>Instructions:</h2>
+      <ol>
+        <li>The image on the right shows how the favicon will look with a circular crop.</li>
+        <li>To use this as your favicon, you can either:
+          <ul>
+            <li>Take a screenshot of the circular version and save it as favicon.png</li>
+            <li>Or use an image editor to create a circular crop of the logo</li>
+          </ul>
+        </li>
+        <li>The favicon is already referenced in the layout.tsx file with this code:
+          <div class="code">
+            &lt;link rel="icon" href="/favicon.png" type="image/png" /&gt;
+          </div>
+        </li>
+        <li>For better browser compatibility, you might want to generate multiple favicon sizes using a tool like <a href="https://realfavicongenerator.net/" target="_blank">Real Favicon Generator</a></li>
+      </ol>
+    </div>
+  </div>
+  
+  <script>
+    // You can add JavaScript here if needed
+  </script>
+</body>
+</html>

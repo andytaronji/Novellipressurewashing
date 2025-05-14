@@ -20,7 +20,7 @@ const blogPosts = [
     image: 'https://res.cloudinary.com/di4phdven/image/upload/v1743643610/6215666345_7923d39f34_b_xlhcj6.jpg',
     cloudinaryId: '6215666345_7923d39f34_b_xlhcj6',
     category: 'Tips & Tricks',
-    author: 'Michael Novelli',
+    author: 'Devin Novelli',
     readTime: '5 min read',
   },
   {
@@ -31,7 +31,7 @@ const blogPosts = [
     image: 'https://res.cloudinary.com/di4phdven/image/upload/v1743643609/4729879117_239642f56e_c_oqvxoy.jpg',
     cloudinaryId: '4729879117_239642f56e_c_oqvxoy',
     category: 'Local Guide',
-    author: 'Michael Novelli',
+    author: 'Devin Novelli',
     readTime: '4 min read',
   },
   {
@@ -42,7 +42,7 @@ const blogPosts = [
     image: 'https://res.cloudinary.com/di4phdven/image/upload/v1743643613/US_Navy_050324-N-3019M-002_Engineman_1st_Class_Joe_Sweeting_2C_assigned_to_Mobile_Diving_Salvage_Unit_One__28MDSU-1_29_2C_uses_a_pressure_washer_to_clean_a_sidewalk_and_remove_unwanted_debris_during_a_community_relations_project_s4lesa.jpg',
     cloudinaryId: 'US_Navy_050324-N-3019M-002_Engineman_1st_Class_Joe_Sweeting_2C_assigned_to_Mobile_Diving_Salvage_Unit_One__28MDSU-1_29_2C_uses_a_pressure_washer_to_clean_a_sidewalk_and_remove_unwanted_debris_during_a_community_relations_project_s4lesa',
     category: 'Commercial',
-    author: 'Michael Novelli',
+    author: 'Devin Novelli',
     readTime: '6 min read',
   },
   {
@@ -53,7 +53,7 @@ const blogPosts = [
     image: 'https://res.cloudinary.com/di4phdven/image/upload/v1743643611/450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn.jpg',
     cloudinaryId: '450px-Concrete_Cleaning_with_a_Surface_Cleaner_ftagbn',
     category: 'Residential',
-    author: 'Michael Novelli',
+    author: 'Devin Novelli',
     readTime: '4 min read',
   },
   {
@@ -63,7 +63,7 @@ const blogPosts = [
     excerpt: 'Understand the differences between soft washing and pressure washing, and which method is best for different surfaces around your Gastonia home.',
     image: 'https://images.unsplash.com/photo-1623298317883-6b70254edf31?q=80&w=800&h=600&auto=format&fit=crop',
     category: 'Education',
-    author: 'Michael Novelli',
+    author: 'Devin Novelli',
     readTime: '5 min read',
   },
   {
@@ -74,7 +74,7 @@ const blogPosts = [
     image: 'https://res.cloudinary.com/di4phdven/image/upload/v1743643608/29682794650_60fe81c119_b_pxbkdc.jpg',
     cloudinaryId: '29682794650_60fe81c119_b_pxbkdc',
     category: 'Local Guide',
-    author: 'Michael Novelli',
+    author: 'Devin Novelli',
     readTime: '5 min read',
   }
 ];

@@ -1,10 +1,15 @@
 /**
- * Helper function to get the Cloudinary URL for an image
- * @param publicId The public ID of the image
+ * Helper function to get the Cloudinary URL for an image or video
+ * @param publicId The public ID of the asset
+ * @param resourceType The type of resource ('image' or 'video')
  * @param options Optional transformation options
  * @returns The Cloudinary URL
  */
-export function getCloudinaryImageUrl(publicId: string, options: Record<string, any> = {}) {
+export function getCloudinaryUrl(
+  publicId: string, 
+  resourceType: 'image' | 'video' = 'image', 
+  options: Record<string, any> = {}
+) {
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'di4phdven';
   
   // Build the transformation string
@@ -16,7 +21,27 @@ export function getCloudinaryImageUrl(publicId: string, options: Record<string, 
     transformations = `${transformationParams}/`;
   }
   
-  return `https://res.cloudinary.com/${cloudName}/image/upload/${transformations}${publicId}`;
+  return `https://res.cloudinary.com/${cloudName}/${resourceType}/upload/${transformations}${publicId}`;
+}
+
+/**
+ * Helper function to get the Cloudinary URL for an image
+ * @param publicId The public ID of the image
+ * @param options Optional transformation options
+ * @returns The Cloudinary URL
+ */
+export function getCloudinaryImageUrl(publicId: string, options: Record<string, any> = {}) {
+  return getCloudinaryUrl(publicId, 'image', options);
+}
+
+/**
+ * Helper function to get the Cloudinary URL for a video
+ * @param publicId The public ID of the video
+ * @param options Optional transformation options
+ * @returns The Cloudinary URL
+ */
+export function getCloudinaryVideoUrl(publicId: string, options: Record<string, any> = {}) {
+  return getCloudinaryUrl(publicId, 'video', options);
 }
 
 /**

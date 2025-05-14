@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import CloudinaryImage from './CloudinaryImage';
+import CloudinaryVideo from './CloudinaryVideo';
 
 interface CardProps {
   title: string;
@@ -26,13 +27,24 @@ const Card = ({
     <>
       {image && (
         <div className="relative w-full h-48 mb-4 overflow-hidden rounded-t-lg">
-          {image.includes('res.cloudinary.com') ? (
+          {image.includes('.mp4') || image.includes('/video/') ? (
+            // Video URL
+            <CloudinaryVideo
+              publicId={image.includes('res.cloudinary.com') ? image : `https://res.cloudinary.com/di4phdven/video/upload/${image}`}
+              alt={title}
+              className="w-full h-full object-cover"
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              controls={false}
+            />
+          ) : image.includes('res.cloudinary.com') ? (
             // Already a full Cloudinary URL
             <Image
               src={image}
               alt={title}
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'contain' }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : image.startsWith('http') ? (
@@ -41,7 +53,7 @@ const Card = ({
               src={image}
               alt={title}
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'contain' }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : (
@@ -50,7 +62,7 @@ const Card = ({
               src={`https://res.cloudinary.com/di4phdven/image/upload/v1743643610/${image}`}
               alt={title}
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'contain' }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           )}

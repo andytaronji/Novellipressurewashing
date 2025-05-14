@@ -3,6 +3,7 @@ import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/layout/Layout";
 import siteConfig from "@/data/siteConfig.json";
+import { Analytics } from "@vercel/analytics/next";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -83,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -92,6 +94,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${openSans.variable} antialiased`}
       >
         <Layout>{children}</Layout>
+        <Analytics />
       </body>
     </html>
   );

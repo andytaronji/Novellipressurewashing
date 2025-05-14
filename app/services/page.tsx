@@ -5,6 +5,7 @@ import Link from 'next/link';
 import services from '@/data/services.json';
 import Button from '@/components/ui/Button';
 import CloudinaryImage from '@/components/ui/CloudinaryImage';
+import CloudinaryVideo from '@/components/ui/CloudinaryVideo';
 
 export default function ServicesPage() {
   return (
@@ -32,13 +33,24 @@ export default function ServicesPage() {
                 className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
               >
                 <div className="md:w-1/2 relative h-[400px] w-full rounded-xl overflow-hidden shadow-lg">
-                  {service.image.includes('res.cloudinary.com') ? (
+                  {service.image.includes('.mp4') || service.image.includes('/video/') ? (
+                    // Video URL
+                    <CloudinaryVideo
+                      publicId={service.image.includes('res.cloudinary.com') ? service.image : `https://res.cloudinary.com/di4phdven/video/upload/${service.image}`}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      autoPlay={true}
+                      loop={true}
+                      muted={true}
+                      controls={true}
+                    />
+                  ) : service.image.includes('res.cloudinary.com') ? (
                     // Already a full Cloudinary URL
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain' }}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : service.image.startsWith('http') ? (
@@ -47,7 +59,7 @@ export default function ServicesPage() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain' }}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : (
@@ -56,7 +68,7 @@ export default function ServicesPage() {
                       src={`https://res.cloudinary.com/di4phdven/image/upload/v1743643610/${service.image}`}
                       alt={service.title}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain' }}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   )}

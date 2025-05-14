@@ -12,7 +12,7 @@
       "House washing",
       "Roof cleaning"
     ],
-    "image": "house-pressure-washing-pressure-washing-in-news-beach-before-after-house-power-washing-services-near-me_cs7hqb",
+    "image": "Driveway_one_xfruu8",
     "beforeAfterImages": [
       {
         "before": "https://images.unsplash.com/photo-1520970519539-8c9eaad9d6ed?q=80&w=400&h=300&auto=format&fit=crop",
@@ -39,7 +39,7 @@
       "Building exterior washing",
       "Awning cleaning"
     ],
-    "image": "Concrete_Cleaning_eztsjm",
+    "image": "https://res.cloudinary.com/di4phdven/image/upload/v1747256987/IMG_2968_lza7sz.jpg",
     "beforeAfterImages": [
       {
         "before": "https://images.unsplash.com/photo-1623298317883-6b70254edf31?q=80&w=400&h=300&auto=format&fit=crop",
@@ -66,12 +66,12 @@
       "Painted surfaces",
       "Screened enclosures"
     ],
-    "image": "Importance-of-Pressure-Washing-Before-Painting-Your-House_mcmvvy",
+    "image": "https://res.cloudinary.com/di4phdven/video/upload/v1747259581/0963d1b45ffbeb869309437ac3119bca_n7mmup.mp4",
     "beforeAfterImages": [
       {
-        "before": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop",
+        "before": "https://res.cloudinary.com/di4phdven/video/upload/v1747259581/0963d1b45ffbeb869309437ac3119bca_n7mmup.mp4",
         "after": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
-        "caption": "Roof cleaning"
+        "caption": "Soft washing video example"
       },
       {
         "before": "https://images.unsplash.com/photo-1613545325278-9265e1609167?q=80&w=400&h=300&auto=format&fit=crop",
@@ -93,12 +93,17 @@
       "Gutter guard installation",
       "Preventative maintenance"
     ],
-    "image": "blog-content-gutter-guard-cleaning_wy90nl",
+    "image": "https://res.cloudinary.com/di4phdven/video/upload/v1747257635/6c277fb9c092558a5dfbfe767ce652ad_opiqnw.mp4",
     "beforeAfterImages": [
       {
         "before": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop",
         "after": "https://images.unsplash.com/photo-1605910909756-a687510572f7?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
         "caption": "Gutter cleaning"
+      },
+      {
+        "before": "https://res.cloudinary.com/di4phdven/video/upload/v1747257635/6c277fb9c092558a5dfbfe767ce652ad_opiqnw.mp4",
+        "after": "https://images.unsplash.com/photo-1613545325278-9265e1609167?q=80&w=400&h=300&auto=format&fit=crop&blend=000000&blend-alpha=10&blend-mode=normal",
+        "caption": "Before and after video example"
       }
     ]
   }

@@ -27,15 +27,19 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <div className="relative h-12 w-48">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="relative h-12 w-12 rounded-full overflow-hidden">
             <Image 
-              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyNDAiIGhlaWdodD0iNjAiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTQwIDEwIEM0MCAxMCwgMzAgMjUsIDMwIDM1IEMzMCA0MiwgNDAgNDcsIDUwIDM1IEM1NSAzMCwgNTAgMTUsIDQwIDEwIFoiIGZpbGw9IiMwMDU2YjMiIC8+PHBhdGggZD0iTTU1IDIwIEw2NSAxNSBNNTUgMjUgTDY4IDIyIE01NSAzMCBMNzAgMzAgTTU1IDM1IEw2OCAzOCBNNTUgNDAgTDY1IDQ1IiBzdHJva2U9IiMwMGE4ZTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHRleHQgeD0iODAiIHk9IjMwIiBmb250LWZhbWlseT0iTW9udHNlcnJhdCwgQXJpYWwiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDU2YjMiPk5PVkVMTEk8L3RleHQ+PHRleHQgeD0iODAiIHk9IjQ4IiBmb250LWZhbWlseT0iTW9udHNlcnJhdCwgQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiMzNDNhNDAiPlBSRVNTVVJFIFdBU0hJTkc8L3RleHQ+PC9zdmc+" 
+              src="https://res.cloudinary.com/di4phdven/image/upload/v1747259383/Novellinator_kdm2vi.webp" 
               alt={siteConfig.businessInfo.name} 
               fill
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'cover' }}
               priority
             />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-primary font-bold text-xl font-heading">NOVELLI</span>
+            <span className="text-dark text-sm font-medium">PRESSURE WASHING</span>
           </div>
         </Link>
 

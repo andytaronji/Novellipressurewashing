@@ -30,10 +30,10 @@ const PressureWashingTipsCharlotteHomesPost = () => {
             </h1>
             <div className="flex items-center">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">
-                MN
+                DN
               </div>
               <div>
-                <p className="font-semibold">Michael Novelli</p>
+                <p className="font-semibold">Devin Novelli</p>
                 <p className="text-sm text-gray-500">Owner, Novelli Pressure Washing</p>
               </div>
             </div>

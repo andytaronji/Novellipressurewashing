@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Button from '../ui/Button';
 import CloudinaryImage from '../ui/CloudinaryImage';
+import CloudinaryVideo from '../ui/CloudinaryVideo';
 import siteConfig from '@/data/siteConfig.json';
 import { getResponsiveImageUrl } from '@/lib/cloudinary';
 
@@ -35,13 +36,16 @@ const Hero = () => {
           
           <div className="md:w-1/2 relative">
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="https://res.cloudinary.com/di4phdven/image/upload/v1743643610/home-power-washing-belmont-nc-1_rekw2r"
+              <CloudinaryVideo
+                publicId="IMG_4745_di4hjo"
                 alt="Pressure washing service in action"
-                fill
+                className="w-full h-full"
                 style={{ objectFit: 'cover' }}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
               />
             </div>
             
