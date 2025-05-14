@@ -24,6 +24,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://novellipressurewashing.com",
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'manifest',
+        url: '/site.webmanifest',
+      },
+    ],
+  },
   openGraph: {
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
@@ -40,6 +57,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+};
+
+export const viewport = {
+  themeColor: '#0056b3',
 };
 
 export default function RootLayout({
@@ -84,7 +105,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Standard favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
+        
+        {/* Apple Touch Icon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Android Chrome Icons */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+        
+        {/* Web Manifest for PWA */}
+        <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* Theme Colors */}
+        <meta name="theme-color" content="#0056b3" />
+        <meta name="msapplication-TileColor" content="#0056b3" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        
+        {/* JSON-LD structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
