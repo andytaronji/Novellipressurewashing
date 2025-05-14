@@ -30,7 +30,7 @@ const Header = () => {
         <Link href="/" className="flex items-center gap-3">
           <div className="relative h-12 w-12 rounded-full overflow-hidden">
             <Image 
-              src="https://res.cloudinary.com/di4phdven/image/upload/v1747259383/Novellinator_kdm2vi.webp" 
+              src="https://res.cloudinary.com/di4phdven/image/upload/v1747261599/IMG_2865_rtwynx.jpg" 
               alt={siteConfig.businessInfo.name} 
               fill
               style={{ objectFit: 'cover' }}
