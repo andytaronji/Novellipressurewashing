@@ -1,9 +1,33 @@
-"use client";
-
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import siteConfig from '@/data/siteConfig.json';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: siteConfig.seo.pages.about.title,
+  description: siteConfig.seo.pages.about.description,
+  keywords: siteConfig.seo.keywords.join(", ") + ", about pressure washing company, Charlotte pressure washing company, professional cleaning team",
+  alternates: {
+    canonical: "https://novellipressurewashing.com/about",
+  },
+  openGraph: {
+    title: siteConfig.seo.pages.about.title,
+    description: siteConfig.seo.pages.about.description,
+    url: "https://novellipressurewashing.com/about",
+    siteName: siteConfig.businessInfo.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "About Novelli Pressure Washing - Charlotte, NC",
+      },
+    ],
+  },
+};
 
 export default function AboutPage() {
   return (

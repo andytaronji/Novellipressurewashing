@@ -1,6 +1,3 @@
-"use client";
-
-import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
@@ -8,10 +5,64 @@ import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import CloudinaryVideo from '@/components/ui/CloudinaryVideo';
 import services from '@/data/services.json';
 import siteConfig from '@/data/siteConfig.json';
+import type { Metadata } from 'next';
 
-export default function ServiceDetailPage() {
-  const params = useParams();
-  const serviceId = params.id as string;
+// Generate metadata for each service page
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const service = services.find(s => s.id === params.id);
+  
+  if (!service) {
+    return {
+      title: 'Service Not Found | Novelli Pressure Washing',
+      description: 'The requested service page could not be found.',
+    };
+  }
+
+  const serviceKeyMap: { [key: string]: string } = {
+    'residential-pressure-washing': 'residential',
+    'commercial-pressure-washing': 'commercial', 
+    'soft-washing': 'softWashing',
+    'gutter-cleaning': 'gutterCleaning'
+  };
+
+  const configKey = serviceKeyMap[params.id];
+  const seoData = configKey ? (siteConfig.seo.pages as any)[configKey] : null;
+
+  return {
+    title: seoData?.title || `${service.title} | Novelli Pressure Washing`,
+    description: seoData?.description || service.shortDescription,
+    keywords: siteConfig.seo.keywords.join(", ") + `, ${service.title.toLowerCase()}, ${params.id.replace('-', ' ')}`,
+    alternates: {
+      canonical: `https://novellipressurewashing.com/services/${params.id}`,
+    },
+    openGraph: {
+      title: seoData?.title || `${service.title} | Novelli Pressure Washing`,
+      description: seoData?.description || service.shortDescription,
+      url: `https://novellipressurewashing.com/services/${params.id}`,
+      siteName: siteConfig.businessInfo.name,
+      locale: "en_US",
+      type: "website",
+      images: [
+        {
+          url: service.image.includes('res.cloudinary.com') ? service.image : `https://res.cloudinary.com/di4phdven/image/upload/v1743643610/${service.image}`,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} - Novelli Pressure Washing`,
+        },
+      ],
+    },
+  };
+}
+
+// Generate static params for all services
+export async function generateStaticParams() {
+  return services.map((service) => ({
+    id: service.id,
+  }));
+}
+
+export default function ServiceDetailPage({ params }: { params: { id: string } }) {
+  const serviceId = params.id;
   
   // Find the service with the matching ID
   const service = services.find(s => s.id === serviceId);
@@ -29,8 +80,49 @@ export default function ServiceDetailPage() {
     );
   }
   
+  // Generate service-specific JSON-LD structured data
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.fullDescription,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": siteConfig.businessInfo.name,
+      "telephone": siteConfig.businessInfo.phone,
+      "email": siteConfig.businessInfo.email,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Charlotte",
+        "addressRegion": "NC",
+        "addressCountry": "US"
+      },
+      "areaServed": siteConfig.businessInfo.serviceAreas.map((area: string) => ({
+        "@type": "City",
+        "name": area + ", NC"
+      })),
+      "url": "https://novellipressurewashing.com"
+    },
+    "serviceType": service.title,
+    "category": "Pressure Washing",
+    "offers": {
+      "@type": "Offer",
+      "description": `Professional ${service.title.toLowerCase()} services`,
+      "priceRange": "$$",
+      "availability": "https://schema.org/InStock"
+    },
+    "image": service.image.includes('res.cloudinary.com') ? service.image : `https://res.cloudinary.com/di4phdven/image/upload/v1743643610/${service.image}`,
+    "url": `https://novellipressurewashing.com/services/${serviceId}`
+  };
+
   return (
     <div className="pt-16">
+      {/* Service-specific JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-secondary text-white py-16">
         <div className="container mx-auto px-4">

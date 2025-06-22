@@ -5,9 +5,28 @@ import siteConfig from '@/data/siteConfig.json';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pressure Washing Service Areas in the Greater Charlotte Area | Novelli Pressure Washing',
-  description: 'Novelli Pressure Washing provides professional pressure washing services throughout the Greater Charlotte Area including Charlotte, Matthews, Huntersville, Belmont, Concord, Gastonia, Mint Hill, Indian Trail, and Pineville.',
-  keywords: 'Greater Charlotte Area pressure washing, Charlotte pressure washing, Matthews pressure washing, Huntersville pressure washing, Belmont pressure washing, Concord pressure washing, Gastonia pressure washing, Mint Hill pressure washing, Indian Trail pressure washing, Pineville pressure washing, local pressure washing services',
+  title: siteConfig.seo.pages.serviceAreas.title,
+  description: siteConfig.seo.pages.serviceAreas.description,
+  keywords: siteConfig.seo.keywords.join(", ") + ", service areas Charlotte, pressure washing coverage area, local pressure washing",
+  alternates: {
+    canonical: "https://novellipressurewashing.com/service-areas",
+  },
+  openGraph: {
+    title: siteConfig.seo.pages.serviceAreas.title,
+    description: siteConfig.seo.pages.serviceAreas.description,
+    url: "https://novellipressurewashing.com/service-areas",
+    siteName: siteConfig.businessInfo.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Novelli Pressure Washing Service Areas - Charlotte, NC",
+      },
+    ],
+  },
 };
 
 const ServiceAreasPage = () => {

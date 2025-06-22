@@ -34,8 +34,8 @@
     "info": "#17a2b8"
   },
   "seo": {
-    "title": "Novelli Pressure Washing | Trusted Pressure Washing Professionals Serving the Greater Charlotte Area",
-    "description": "Novelli Pressure Washing provides top-rated residential and commercial pressure washing services throughout the Greater Charlotte Area. Serving a 25-mile radius including Charlotte, Matthews, Huntersville, Belmont, and surrounding communities. Local experts, free quotes!",
+    "title": "Pressure Washing Charlotte NC | Novelli Pressure Washing",
+    "description": "Professional pressure washing services in Charlotte, NC. Residential & commercial cleaning. Free quotes, 25-mile service radius. Call 980-266-4818!",
     "keywords": [
       "pressure washing",
       "power washing",
@@ -64,6 +64,52 @@
       "25-mile service radius"
     ],
     "ogImage": "/images/og-image.jpg",
-    "twitterHandle": "@novelliPW"
+    "twitterHandle": "@novelliPW",
+    "pages": {
+      "home": {
+        "title": "Pressure Washing Charlotte NC | Novelli Pressure Washing",
+        "description": "Professional pressure washing services in Charlotte, NC. Residential & commercial cleaning. Free quotes, 25-mile service radius. Call 980-266-4818!"
+      },
+      "services": {
+        "title": "Pressure Washing Services Charlotte | Novelli PW",
+        "description": "Complete pressure washing services in Charlotte: residential, commercial, soft washing & gutter cleaning. Professional results, free estimates."
+      },
+      "about": {
+        "title": "About Novelli Pressure Washing | Charlotte NC",
+        "description": "Learn about Novelli Pressure Washing - Charlotte's trusted pressure washing professionals. Quality service, experienced team, satisfaction guaranteed."
+      },
+      "contact": {
+        "title": "Contact Novelli Pressure Washing | Charlotte NC",
+        "description": "Get your free pressure washing quote! Serving Charlotte & surrounding areas. Call 980-266-4818 or contact us online for fast service."
+      },
+      "serviceAreas": {
+        "title": "Service Areas | Pressure Washing Charlotte NC",
+        "description": "Novelli Pressure Washing serves Charlotte, Matthews, Huntersville, Concord, Gastonia & more. 25-mile radius coverage. Check if we serve you!"
+      },
+      "blog": {
+        "title": "Pressure Washing Blog | Tips & Guides | Charlotte NC",
+        "description": "Expert pressure washing tips, guides, and insights for Charlotte homeowners. Learn maintenance tips and cleaning techniques from the pros."
+      },
+      "faq": {
+        "title": "Pressure Washing FAQs | Novelli Charlotte NC",
+        "description": "Common pressure washing questions answered. Learn about our services, pricing, process & more. Get expert answers from Charlotte's pros."
+      },
+      "residential": {
+        "title": "Residential Pressure Washing Charlotte | Novelli PW",
+        "description": "Professional home pressure washing in Charlotte. Driveways, siding, decks & more. Safe, effective cleaning for your property. Free quotes!"
+      },
+      "commercial": {
+        "title": "Commercial Pressure Washing Charlotte | Novelli PW",
+        "description": "Professional commercial pressure washing services in Charlotte. Buildings, parking lots, sidewalks & more. Reliable service for businesses."
+      },
+      "softWashing": {
+        "title": "Soft Washing Services Charlotte | Novelli PW",
+        "description": "Gentle soft washing for delicate surfaces in Charlotte. Safe cleaning for roofs, siding & painted surfaces. Professional results guaranteed."
+      },
+      "gutterCleaning": {
+        "title": "Gutter Cleaning Charlotte NC | Novelli PW",
+        "description": "Professional gutter cleaning services in Charlotte. Remove debris, prevent damage, maintain proper drainage. Schedule your service today!"
+      }
+    }
   }
 }

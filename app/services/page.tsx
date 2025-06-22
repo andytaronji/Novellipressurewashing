@@ -1,11 +1,36 @@
-"use client";
-
 import Image from 'next/image';
 import Link from 'next/link';
 import services from '@/data/services.json';
+import siteConfig from '@/data/siteConfig.json';
 import Button from '@/components/ui/Button';
 import CloudinaryImage from '@/components/ui/CloudinaryImage';
 import CloudinaryVideo from '@/components/ui/CloudinaryVideo';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: siteConfig.seo.pages.services.title,
+  description: siteConfig.seo.pages.services.description,
+  keywords: siteConfig.seo.keywords.join(", ") + ", pressure washing services, power washing services, Charlotte pressure washing services",
+  alternates: {
+    canonical: "https://novellipressurewashing.com/services",
+  },
+  openGraph: {
+    title: siteConfig.seo.pages.services.title,
+    description: siteConfig.seo.pages.services.description,
+    url: "https://novellipressurewashing.com/services",
+    siteName: siteConfig.businessInfo.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Novelli Pressure Washing Services - Charlotte, NC",
+      },
+    ],
+  },
+};
 
 export default function ServicesPage() {
   return (

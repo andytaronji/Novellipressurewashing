@@ -4,9 +4,28 @@ import type { Metadata } from 'next';
 import siteConfig from '@/data/siteConfig.json';
 
 export const metadata: Metadata = {
-  title: 'Pressure Washing FAQs | Novelli Pressure Washing',
-  description: 'Find answers to frequently asked questions about pressure washing services near you in Charlotte, NC and surrounding areas. Learn about our process, pricing, and more.',
-  keywords: 'pressure washing FAQ, pressure washing questions, pressure washing near me, Charlotte pressure washing, local pressure washing services',
+  title: siteConfig.seo.pages.faq.title,
+  description: siteConfig.seo.pages.faq.description,
+  keywords: siteConfig.seo.keywords.join(", ") + ", pressure washing FAQ, pressure washing questions, frequently asked questions",
+  alternates: {
+    canonical: "https://novellipressurewashing.com/faq",
+  },
+  openGraph: {
+    title: siteConfig.seo.pages.faq.title,
+    description: siteConfig.seo.pages.faq.description,
+    url: "https://novellipressurewashing.com/faq",
+    siteName: siteConfig.businessInfo.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Novelli Pressure Washing FAQ - Charlotte, NC",
+      },
+    ],
+  },
 };
 
 // FAQ data

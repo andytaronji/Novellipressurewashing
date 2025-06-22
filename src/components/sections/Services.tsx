@@ -66,11 +66,18 @@ const Services = () => {
         <div className="mt-16 bg-accent rounded-lg p-8 text-center text-black">
           <h3 className="text-2xl font-bold mb-4 font-heading">Not sure which service you need?</h3>
           <p className="mb-6 max-w-2xl mx-auto">
-            Our team of experts can help you determine the best cleaning solution for your property. Contact us for a free consultation and quote.
+            Our team of experts can help you determine the best cleaning solution for your property. 
+            Check out our <Link href="/service-areas" className="underline hover:text-primary">service areas</Link> to see if we serve your location, 
+            or visit our <Link href="/faq" className="underline hover:text-primary">FAQ page</Link> for common questions about pressure washing.
           </p>
-          <Button href="/contact" variant="primary">
-            Contact Us
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" variant="primary">
+              Contact Us
+            </Button>
+            <Button href="/about" variant="outline">
+              Learn About Our Process
+            </Button>
+          </div>
         </div>
       </div>
     </section>

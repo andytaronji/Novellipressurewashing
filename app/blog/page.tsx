@@ -2,12 +2,32 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import CloudinaryImage from '@/components/ui/CloudinaryImage';
+import siteConfig from '@/data/siteConfig.json';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pressure Washing Blog | Novelli Pressure Washing',
-  description: 'Expert tips, guides, and insights about pressure washing in Charlotte, NC and surrounding areas. Learn about maintaining your property with professional pressure washing services.',
-  keywords: 'pressure washing blog, pressure washing tips, Charlotte pressure washing, pressure washing near me, power washing guide',
+  title: siteConfig.seo.pages.blog.title,
+  description: siteConfig.seo.pages.blog.description,
+  keywords: siteConfig.seo.keywords.join(", ") + ", pressure washing blog, pressure washing tips, cleaning guides",
+  alternates: {
+    canonical: "https://novellipressurewashing.com/blog",
+  },
+  openGraph: {
+    title: siteConfig.seo.pages.blog.title,
+    description: siteConfig.seo.pages.blog.description,
+    url: "https://novellipressurewashing.com/blog",
+    siteName: siteConfig.businessInfo.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Novelli Pressure Washing Blog - Charlotte, NC",
+      },
+    ],
+  },
 };
 
 // Blog post data
