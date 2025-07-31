@@ -4,6 +4,7 @@ import "./globals.css";
 import Layout from "@/components/layout/Layout";
 import siteConfig from "@/data/siteConfig.json";
 import { Analytics } from "@vercel/analytics/next";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -115,6 +116,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${openSans.variable} antialiased`}
       >
+        <GoogleAnalytics trackingId={process.env.NEXT_PUBLIC_GA_TRACKING_ID || ''} />
         <Layout>{children}</Layout>
         <Analytics />
       </body>
