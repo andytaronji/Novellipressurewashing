@@ -1,18 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 
-// Initialize SendGrid with API key
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-}
+// Initialize Resend with API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
-    // Check if SendGrid API key is configured
-    if (!process.env.SENDGRID_API_KEY) {
-      console.error('SendGrid API key is not configured');
+    // Check if Resend API key is configured
+    if (!process.env.RESEND_API_KEY) {
+      console.error('Resend API key is not configured');
       return NextResponse.json(
-        { error: 'Email service is not configured. SENDGRID_API_KEY is missing.' },
+        { error: 'Email service is not configured. RESEND_API_KEY is missing.' },
         { status: 500 }
       );
     }
@@ -40,15 +38,16 @@ export async function POST(request: NextRequest) {
 
     // Log environment variables (without sensitive data)
     console.log('Environment check:', {
-      hasApiKey: !!process.env.SENDGRID_API_KEY,
+      hasApiKey: !!process.env.RESEND_API_KEY,
       fromEmail: process.env.FROM_EMAIL,
       toEmail: process.env.TO_EMAIL || 'novellipw@gmail.com'
     });
 
     // Construct email content
     const emailContent = {
-      to: process.env.TO_EMAIL || 'novellipw@gmail.com',
-      from: process.env.FROM_EMAIL, // Must be verified in SendGrid
+      from: process.env.FROM_EMAIL,
+      to: [process.env.TO_EMAIL || 'novellipw@gmail.com'],
+      reply_to: [email], // Reply goes to the person who submitted the form
       subject: `New Contact Form Submission from ${name}`,
       text: `
         Name: ${name}
@@ -71,31 +70,70 @@ export async function POST(request: NextRequest) {
     };
 
     try {
-      // Send email
-      console.log('Attempting to send email...');
-      const response = await sgMail.send(emailContent);
-      console.log('SendGrid response:', response[0].statusCode);
+      // Send email using Resend
+      console.log('Attempting to send email with Resend...');
+      console.log('Email payload:', JSON.stringify(emailContent, null, 2));
       
-      // Return success response
-      return NextResponse.json({ success: true });
-    } catch (sendGridError: any) {
-      // Handle SendGrid specific errors
-      console.error('SendGrid Error:', sendGridError);
+      const { data, error } = await resend.emails.send(emailContent);
       
-      if (sendGridError.response) {
-        console.error('SendGrid Error Body:', sendGridError.response.body);
+      if (error) {
+        console.error('Resend Error:', error);
         
-        // Return more specific error message
+        // Handle specific Resend errors
+        let specificError = 'Failed to send email';
+        
+        if (error.message?.includes('API key')) {
+          specificError = 'Invalid Resend API key or unauthorized access';
+        } else if (error.message?.includes('from')) {
+          specificError = 'Invalid sender email address format';
+        } else if (error.message?.includes('to')) {
+          specificError = 'Invalid recipient email address format';
+        } else if (error.message) {
+          specificError = error.message;
+        }
+        
         return NextResponse.json(
           { 
-            error: 'Failed to send email', 
-            details: sendGridError.response.body 
+            error: specificError,
+            details: error
           },
           { status: 500 }
         );
       }
       
-      throw sendGridError; // Re-throw for general error handling
+      console.log('Resend success:', data);
+      
+      // Return success response
+      return NextResponse.json({ 
+        success: true,
+        messageId: data?.id 
+      });
+      
+    } catch (resendError: any) {
+      // Handle Resend specific errors
+      console.error('Resend Error Details:', {
+        message: resendError.message,
+        name: resendError.name,
+        stack: resendError.stack
+      });
+      
+      let specificError = 'Failed to send email';
+      
+      if (resendError.message?.includes('API key')) {
+        specificError = 'Invalid Resend API key or unauthorized access';
+      } else if (resendError.message?.includes('rate limit')) {
+        specificError = 'Email rate limit exceeded. Please try again later.';
+      } else if (resendError.message) {
+        specificError = resendError.message;
+      }
+      
+      return NextResponse.json(
+        { 
+          error: specificError,
+          details: resendError.message
+        },
+        { status: 500 }
+      );
     }
   } catch (error: any) {
     console.error('Error in contact API route:', error);

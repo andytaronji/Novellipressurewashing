@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #003057;
-  --secondary: #00B0F0;
-  --accent: #FFA500;
-  --dark: #002040;
-  --light: #f8f9fa;
-  --success: #28a745;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --info: #17a2b8;
+  --background: #F9FAFB;
+  --foreground: #1A2327;
+  --primary: #006D5B;
+  --secondary: #00B4D8;
+  --accent: #F2542D;
+  --dark: #00343A;
+  --light: #E4F2F6;
+  --success: #27AE60;
+  --warning: #FFD166;
+  --danger: #E63946;
+  --info: #118AB2;
 }
 
 @theme inline {
@@ -24,10 +24,6 @@
 }
 
 /* Removed dark mode to keep consistent white background */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 body {
   background: var(--background);
