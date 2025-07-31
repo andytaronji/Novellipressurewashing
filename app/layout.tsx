@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: '#006D5B',
+  themeColor: '#1769AA',
 };
 
 export default function RootLayout({
@@ -103,8 +103,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Theme Colors */}
-        <meta name="theme-color" content="#006D5B" />
-        <meta name="msapplication-TileColor" content="#006D5B" />
+        <meta name="theme-color" content="#1769AA" />
+        <meta name="msapplication-TileColor" content="#1769AA" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         
         {/* JSON-LD structured data */}
