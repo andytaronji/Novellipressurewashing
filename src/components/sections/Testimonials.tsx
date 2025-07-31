@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import Image from 'next/image';
 import testimonials from '@/data/testimonials.json';
 
 const Testimonials = () => {
@@ -13,6 +12,14 @@ const Testimonials = () => {
   
   const handleNext = () => {
     setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+  
+  const getInitials = (name: string) => {
+    const names = name.split(' ');
+    if (names.length === 1) {
+      return names[0].substring(0, 2).toUpperCase();
+    }
+    return (names[0][0] + names[names.length - 1][0]).toUpperCase();
   };
   
   const renderStars = (rating: number) => {
@@ -54,13 +61,8 @@ const Testimonials = () => {
               </div>
               <p className="text-lg italic mb-6 text-black">"{testimonials[activeIndex].text}"</p>
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-300 mr-4 relative overflow-hidden">
-                  <Image
-                    src={`https://randomuser.me/api/portraits/${activeIndex % 2 === 0 ? 'men' : 'women'}/${activeIndex + 1}.jpg`}
-                    alt={testimonials[activeIndex].name}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
+                <div className="w-12 h-12 rounded-full bg-primary text-white mr-4 flex items-center justify-center font-bold text-sm">
+                  {getInitials(testimonials[activeIndex].name)}
                 </div>
                 <div>
                   <h4 className="font-bold font-heading text-black">{testimonials[activeIndex].name}</h4>

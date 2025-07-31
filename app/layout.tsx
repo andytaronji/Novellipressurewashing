@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
-      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      { url: 'https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg', sizes: '32x32', type: 'image/jpeg' },
+      { url: 'https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg', sizes: '16x16', type: 'image/jpeg' },
+      { url: 'https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg', sizes: '192x192', type: 'image/jpeg' },
+      { url: 'https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg', sizes: '512x512', type: 'image/jpeg' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: 'https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg', sizes: '180x180', type: 'image/jpeg' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -79,7 +79,7 @@ export default function RootLayout({
     "telephone": siteConfig.businessInfo.phone,
     "email": siteConfig.businessInfo.email,
     "url": "https://novellipressurewashing.com",
-    "image": "https://novellipressurewashing.com/images/logo.png",
+    "image": "https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg",
     "priceRange": "$$",
     "openingHours": siteConfig.businessInfo.hours,
     "sameAs": [

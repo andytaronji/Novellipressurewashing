@@ -3,17 +3,17 @@
   "short_name": "Novelli",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "https://res.cloudinary.com/di4phdven/image/upload/v1753980619/Devin_s_logo_chiqys.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ],
-  "theme_color": "#0056b3",
+  "theme_color": "#1769AA",
   "background_color": "#ffffff",
   "display": "standalone"
 }

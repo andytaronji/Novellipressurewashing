@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "name": "John Smith",
+    "name": "Susan B",
     "location": "Charlotte, NC",
     "rating": 5,
-    "text": "Novelli Pressure Washing did an amazing job on our driveway and patio. They were professional, on time, and the results exceeded our expectations. Our concrete looks brand new!",
+    "text": "After submitting an online inquiry for quotes regarding a huge oil slick in the garage, Devin called promptly & explained options. Several days later we scheduled the appt. in which he was on time & prepared. As mentioned in conversation, he explained the type of acid may not be strong enough for the severity of stain but worth a try. Initially it appeared most of it came off. I was very pleased & his amount charged was quite fair. However, once it dried, the stain was still prominent. Definitely not his fault, I do plan to contact him again down the road & we'll try the stronger solution. Very nice & knowledgeable, you can't go wrong",
     "service": "residential-pressure-washing",
     "date": "2024-02-15"
   },
   {
     "id": 2,
-    "name": "Sarah Johnson",
+    "name": "Chris Roberts",
     "location": "Matthews, NC",
     "rating": 5,
-    "text": "I hired Novelli to clean the exterior of my office building and they did a fantastic job. The building looks fresh and clean, and they worked around our business hours to minimize disruption. Highly recommend!",
-    "service": "commercial-pressure-washing",
+    "text": "We really like the results after soft washing our house and pressure washing our very dirty driveway. I fully recommend NOVELLI pressure washing services and plan to use them next time we need cleaning services.",
+    "service": "soft-washing",
     "date": "2024-01-20"
   },
   {
     "id": 3,
-    "name": "Michael Rodriguez",
+    "name": "Dannethia Little",
     "location": "Huntersville, NC",
     "rating": 5,
-    "text": "The soft washing service for our roof was excellent. The team was knowledgeable and careful, and they completely removed all the black streaks and algae. Our roof looks like new again!",
-    "service": "soft-washing",
+    "text": "I got this awesome Power Wash company from Angi list. Very professional, respect and reliable. I had got another quote from another company twice the price. Awesome job. Thank you Devin.",
+    "service": "residential-pressure-washing",
     "date": "2023-12-05"
   },
   {
     "id": 4,
-    "name": "Emily Wilson",
+    "name": "Christopher Gibson",
     "location": "Concord, NC",
-    "rating": 4,
-    "text": "Great service from Novelli Pressure Washing. They cleaned our gutters thoroughly and even fixed a minor issue at no extra charge. Will definitely use them again next season.",
-    "service": "gutter-cleaning",
+    "rating": 5,
+    "text": "Devin has done a great job for power-washing overall process was smooth told him what areas needed work on and he did an outstanding job would recommend him in the future.",
+    "service": "residential-pressure-washing",
     "date": "2023-11-12"
   },
   {
